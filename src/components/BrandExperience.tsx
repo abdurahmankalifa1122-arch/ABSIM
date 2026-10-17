@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, Shield, Compass } from 'lucide-react';
+import equipmentImage from '../assets/images/detailing_studio_equipment_1792228177222.jpg';
 
 export const BrandExperience: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ export const BrandExperience: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-[#15191D] border border-[#242A30]">
               <img
-                src="/src/assets/images/detailing_studio_equipment_1792228177222.jpg"
+                src={equipmentImage}
                 alt="Professional automotive detailing equipment and polished black vehicle finish in studio"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05]"

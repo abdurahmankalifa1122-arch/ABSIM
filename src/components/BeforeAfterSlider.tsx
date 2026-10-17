@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
+import heroDetailingImg from '../assets/images/hero_luxury_detailing_1792227721860.jpg';
 
 export const BeforeAfterSlider: React.FC = () => {
   const [sliderPosition, setSliderPosition] = useState<number>(50);
@@ -53,7 +54,7 @@ export const BeforeAfterSlider: React.FC = () => {
         >
           {/* AFTER (Full background) */}
           <img
-            src="/src/assets/images/hero_luxury_detailing_1792227721860.jpg"
+            src={heroDetailingImg}
             alt="Restored mirror finish on black luxury car"
             referrerPolicy="no-referrer"
             className="absolute inset-0 w-full h-full object-cover filter contrast-[1.1] brightness-95"
@@ -74,7 +75,7 @@ export const BeforeAfterSlider: React.FC = () => {
               }}
             >
               <img
-                src="/src/assets/images/hero_luxury_detailing_1792227721860.jpg"
+                src={heroDetailingImg}
                 alt="Uncorrected car finish with dull haze"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-[0.78] contrast-[0.85] blur-[0.8px] sepia-[0.1]"

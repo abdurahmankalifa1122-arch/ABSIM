@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MapPin, MessageSquare, ShieldCheck } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
+import heroImage from '../assets/images/hero_luxury_detailing_1792227721860.jpg';
 
 interface HeroProps {
   onBookClick?: () => void;
@@ -35,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
       {/* Background Image with Measured Contrast Scrim */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_luxury_detailing_1792227721860.jpg"
+          src={heroImage}
           alt="Luxury black vehicle inside ABSIM Automotive detailing studio in Addis Ababa"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center scale-[1.02] filter brightness-90 contrast-[1.05]"

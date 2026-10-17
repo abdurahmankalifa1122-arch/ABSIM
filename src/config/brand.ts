@@ -1,3 +1,9 @@
+import heroDetailingImg from '../assets/images/hero_luxury_detailing_1792227721860.jpg';
+import foamWashImg from '../assets/images/foam_wash_process_1792227723837.jpg';
+import interiorLeatherImg from '../assets/images/interior_leather_care_1792227723340.jpg';
+import wheelCareImg from '../assets/images/wheel_brake_detailing_1792227723262.jpg';
+import equipmentImg from '../assets/images/detailing_studio_equipment_1792228177222.jpg';
+
 export interface ServiceItem {
   id: string;
   code: string;
@@ -33,7 +39,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Thorough exterior cleaning with attention to the vehicle’s finish and presentation.',
     fullDesc: 'A meticulous multi-stage contact wash using pH-neutral foam, microfiber wash mitts, grit-guard buckets, and warm filtered rinsing to safely lift road grime without inflicting micro-scratches.',
     estimatedDuration: '45 – 60 mins',
-    image: '/src/assets/images/foam_wash_process_1792227723837.jpg',
+    image: foamWashImg,
     features: [
       'High-lubricity snow foam pre-wash soak',
       'Two-bucket gentle hand wash with soft microfibers',
@@ -50,7 +56,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Careful cleaning of interior surfaces, carpets, and other suitable materials.',
     fullDesc: 'Comprehensive rejuvenation of the cabin environment. Vacuuming of all carpets and seat crevices, gentle surface shampooing, and dust extraction from vents and compartments.',
     estimatedDuration: '1.5 – 2.5 hours',
-    image: '/src/assets/images/interior_leather_care_1792227723340.jpg',
+    image: interiorLeatherImg,
     features: [
       'Deep high-suction vacuuming across cabin & trunk',
       'Floor mat extraction & carpet spot treatment',
@@ -67,7 +73,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'A more meticulous exterior-cleaning service focused on improving the vehicle’s appearance.',
     fullDesc: 'Beyond a standard wash: fine paint decontamination, glass polishing, chrome and trim restoration, and protective sealant application that enhances depth of color and hydrophobic water beading.',
     estimatedDuration: '3 – 5 hours',
-    image: '/src/assets/images/hero_luxury_detailing_1792227721860.jpg',
+    image: heroDetailingImg,
     features: [
       'Chemical decontamination & clay surface smoothing',
       'Gloss-enhancing machine paint cleanse',
@@ -84,7 +90,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Detailed attention to interior surfaces, visible dust, and hard-to-reach areas.',
     fullDesc: 'Fine brush detailing of instrument clusters, leather grain conditioning, piano-black trim care, steering wheel deep de-greasing, and conditioning of high-wear touchpoints.',
     estimatedDuration: '2 – 3 hours',
-    image: '/src/assets/images/interior_leather_care_1792227723340.jpg',
+    image: interiorLeatherImg,
     features: [
       'Precision boars-hair brush detailing of all dash vents & switches',
       'Supple matte conditioning for leather surfaces',
@@ -101,7 +107,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'Cleaning and finishing for wheels and tyres.',
     fullDesc: 'Dedicated attention to one of the most visible focal points of your automobile. Removal of stubborn baked brake dust, wheel barrel cleaning, and rich satin UV tire dressing that resists sling.',
     estimatedDuration: '45 mins',
-    image: '/src/assets/images/wheel_brake_detailing_1792227723262.jpg',
+    image: wheelCareImg,
     features: [
       'Acid-free pH-balanced brake dust dissolver',
       'Inner wheel barrel & brake caliper cleaning',
@@ -118,7 +124,7 @@ export const SERVICES: ServiceItem[] = [
     shortDesc: 'A combined service option for customers who want comprehensive vehicle cleaning.',
     fullDesc: 'Our definitive full-suite package uniting exterior precision washing, wheels treatment, interior rejuvenation, and paint protection in a seamless, unified service visit.',
     estimatedDuration: '4 – 6 hours',
-    image: '/src/assets/images/detailing_studio_equipment_1792228177222.jpg',
+    image: equipmentImg,
     features: [
       'Complete Premium Car Wash + Snow foam prep',
       'Full interior deep clean & dust extraction',
@@ -135,7 +141,7 @@ export const GALLERY_ITEMS = [
     title: 'Obsidian Clear Coat Studio Inspection',
     category: 'Exterior',
     aspect: '16:9',
-    image: '/src/assets/images/hero_luxury_detailing_1792227721860.jpg',
+    image: heroDetailingImg,
     caption: 'Deep gloss paint finish under diffuse studio lighting inspection lamps.',
   },
   {
@@ -143,7 +149,7 @@ export const GALLERY_ITEMS = [
     title: 'Multi-Spoke Alloy & Caliper Finishing',
     category: 'Wheels',
     aspect: '4:3',
-    image: '/src/assets/images/wheel_brake_detailing_1792227723262.jpg',
+    image: wheelCareImg,
     caption: 'Clean rim barrel, spotless brake disc, and conditioned satin sidewalls.',
   },
   {
@@ -151,7 +157,7 @@ export const GALLERY_ITEMS = [
     title: 'Studio Detailing Station & Machine Polisher',
     category: 'Studio Process',
     aspect: '4:3',
-    image: '/src/assets/images/detailing_studio_equipment_1792228177222.jpg',
+    image: equipmentImg,
     caption: 'Dual-action machine polishers, dedicated compounds, and controlled inspection lighting.',
   },
   {
@@ -159,7 +165,7 @@ export const GALLERY_ITEMS = [
     title: 'Luxury Cabin Leather & Console Detailing',
     category: 'Interior',
     aspect: '4:3',
-    image: '/src/assets/images/interior_leather_care_1792227723340.jpg',
+    image: interiorLeatherImg,
     caption: 'Supple leather conditioning, dust-free vents, and clear display screens.',
   },
   {
@@ -167,7 +173,7 @@ export const GALLERY_ITEMS = [
     title: 'High-Density Hydrophobic Snow Foam Soak',
     category: 'Exterior',
     aspect: '4:3',
-    image: '/src/assets/images/foam_wash_process_1792227723837.jpg',
+    image: foamWashImg,
     caption: 'Thick pre-wash foam encapsulating grit prior to touchless rinsing.',
   },
 ];
