@@ -1,0 +1,6 @@
+{
+  "name": "ABSIM AUTOMOTIVE — Luxury Vehicle Care",
+  "description": "Premier automotive detailing studio and vehicle care in Addis Ababa, Ethiopia. Precision exterior wash, deep interior detailing, and paint restoration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
