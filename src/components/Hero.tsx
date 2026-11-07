@@ -108,12 +108,12 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
               />
 
               {/* Clean bottom status bar */}
-              <div className="p-3 bg-[#14171D] border-t border-[#232832] flex items-center justify-between text-xs">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  <span className="text-white font-medium text-[12px]">Workshop & Car Laundry Facility</span>
+              <div className="p-3 bg-[#14171D] border-t border-[#232832] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 text-xs w-full box-border">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                  <span className="text-white font-medium text-[12px] truncate sm:whitespace-normal">Workshop & Car Laundry Facility</span>
                 </div>
-                <span className="text-[11px] text-[#9CA3AF] font-mono">Behind AMCE · Gate Access</span>
+                <span className="text-[11px] text-[#9CA3AF] font-mono shrink-0">Behind AMCE · Gate Access</span>
               </div>
             </div>
           </div>

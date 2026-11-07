@@ -18,11 +18,11 @@ export const AboutSection: React.FC = () => {
                 decoding="async"
                 className="w-full h-auto object-cover object-center block"
               />
-              <div className="p-3 bg-[#14171D] border-t border-[#232832] flex items-center justify-between text-xs text-[#9CA3AF]">
-                <span className="text-[#8E1A27] font-semibold uppercase tracking-wider text-[11px]">
+              <div className="p-3 bg-[#14171D] border-t border-[#232832] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 text-xs text-[#9CA3AF] w-full box-border">
+                <span className="text-[#8E1A27] font-semibold uppercase tracking-wider text-[11px] shrink-0">
                   Official Location
                 </span>
-                <span className="font-mono text-[11px] text-white">
+                <span className="font-mono text-[11px] text-white break-words [overflow-wrap:anywhere]">
                   Behind AMCE Compound · Megenagna
                 </span>
               </div>

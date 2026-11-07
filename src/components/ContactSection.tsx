@@ -1,11 +1,14 @@
-import React from 'react';
-import { MapPin, Phone, MessageSquare, Navigation, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Phone, MessageSquare, Navigation, Clock, Image as ImageIcon, Map as MapIcon } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
 import entranceImage from '../assets/images/absim_workshop_entrance.jpg';
+import facilityImage from '../assets/images/absim_vehicle_inspection_pit.jpg';
 
 export const ContactSection: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'photo' | 'map'>('photo');
+
   return (
-    <section id="contact" className="py-14 sm:py-20 pb-24 sm:pb-28 bg-[#0E1115] border-b border-[#232832] overflow-x-hidden">
+    <section id="contact" className="py-14 sm:py-20 pb-24 sm:pb-28 bg-[#0E1115] border-b border-[#232832] overflow-x-hidden w-full box-border">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full box-border">
         {/* Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-10 w-full box-border">
@@ -14,15 +17,15 @@ export const ContactSection: React.FC = () => {
             <span className="text-neutral-600">·</span>
             <span className="text-white">ADDIS ABABA</span>
           </div>
-          <h2 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold text-white leading-tight mb-2.5 font-heading break-words">
+          <h2 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold text-white leading-tight mb-2.5 font-heading break-words [overflow-wrap:anywhere]">
             Visit ABSIM AUTOMOTIVE.
           </h2>
-          <p className="text-[14px] sm:text-[16px] text-[#9CA3AF] leading-relaxed break-words">
+          <p className="text-[14px] sm:text-[16px] text-[#9CA3AF] leading-relaxed break-words [overflow-wrap:anywhere]">
             Conveniently located behind the AMCE compound in the Megenagna automotive corridor. Reach out directly by phone, WhatsApp, or drop by during business hours.
           </p>
         </div>
 
-        {/* Quick Contact Bar: Phone, WhatsApp, Hours (Wrapped & Responsive) */}
+        {/* Quick Contact Bar: Phone, WhatsApp, Hours (Single-col mobile, 3-col desktop) */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 sm:mb-12 w-full box-border">
           {/* Direct Phone */}
           <a
@@ -36,7 +39,7 @@ export const ContactSection: React.FC = () => {
               <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">
                 Direct Call
               </div>
-              <div className="text-xs sm:text-sm font-bold text-white font-mono group-hover:text-[#D1D5DB] transition-colors break-words">
+              <div className="text-xs sm:text-sm font-bold text-white font-mono group-hover:text-[#D1D5DB] transition-colors break-words [overflow-wrap:anywhere]">
                 {BRAND_CONFIG.phoneDisplay}
               </div>
             </div>
@@ -56,7 +59,7 @@ export const ContactSection: React.FC = () => {
               <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">
                 WhatsApp Direct
               </div>
-              <div className="text-xs sm:text-sm font-bold text-white group-hover:text-[#D1D5DB] transition-colors break-words">
+              <div className="text-xs sm:text-sm font-bold text-white group-hover:text-[#D1D5DB] transition-colors break-words [overflow-wrap:anywhere]">
                 Start Chat
               </div>
             </div>
@@ -71,7 +74,7 @@ export const ContactSection: React.FC = () => {
               <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">
                 Working Hours
               </div>
-              <div className="text-xs sm:text-sm font-medium text-white break-words">
+              <div className="text-xs sm:text-sm font-medium text-white break-words [overflow-wrap:anywhere]">
                 Mon – Sat: 8:00 AM – 6:30 PM
               </div>
             </div>
@@ -79,12 +82,12 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* =========================================================================
-            BLOCK ONE: WORKSHOP & CAR LAUNDRY FACILITY
-            Strict Order on all screens:
-            1. Image First
-            2. Title Underneath
-            3. Short Description
-            4. Corresponding Location Information
+            CARD ONE: WORKSHOP & CAR LAUNDRY FACILITY
+            Strict Order on Mobile & All Screens:
+            1. Workshop Entrance Photograph
+            2. WORKSHOP & CAR LAUNDRY FACILITY Title Underneath
+            3. Workshop Facility Description
+            4. Corresponding Workshop Address & Location Details
            ========================================================================= */}
         <div className="w-full bg-[#14171D] border border-[#232832] rounded-lg overflow-hidden shadow-lg box-border">
           {/* 1. Workshop entrance photograph first */}
@@ -97,7 +100,7 @@ export const ContactSection: React.FC = () => {
               className="w-full h-full object-cover object-center block"
             />
             <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#0B0D10]/90 backdrop-blur-sm border border-[#2D333B] px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white">
-              Facility Entrance Gate
+              Workshop Entrance Gate
             </div>
           </div>
 
@@ -108,13 +111,13 @@ export const ContactSection: React.FC = () => {
               <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-1">
                 FACILITY LOCATION
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-heading break-words">
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-heading break-words [overflow-wrap:anywhere]">
                 WORKSHOP & CAR LAUNDRY FACILITY
               </h3>
             </div>
 
             {/* 3. Short description of the facility */}
-            <p className="text-sm sm:text-[15px] text-[#D1D5DB] leading-relaxed mb-4 break-words">
+            <p className="text-sm sm:text-[15px] text-[#D1D5DB] leading-relaxed mb-4 break-words [overflow-wrap:anywhere]">
               Our active automotive care workshop and dedicated Car Laundry yard located within the secure, gated compound behind AMCE. Equipped with high-precision tyre mounting, electronic wheel balancing, Corghi 3D computerized alignment, full walk-under vehicle inspection pit, and high-pressure vehicle washing bays.
             </p>
 
@@ -126,10 +129,10 @@ export const ContactSection: React.FC = () => {
                   <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold">
                     Facility Address
                   </div>
-                  <p className="text-sm sm:text-base font-bold text-white break-words">
+                  <p className="text-sm sm:text-base font-bold text-white break-words [overflow-wrap:anywhere]">
                     Behind AMCE Compound, Megenagna
                   </p>
-                  <p className="text-xs sm:text-sm text-[#9CA3AF] break-words">
+                  <p className="text-xs sm:text-sm text-[#9CA3AF] break-words [overflow-wrap:anywhere]">
                     Addis Ababa, Ethiopia · Spacious Gated Customer Yard
                   </p>
                 </div>
@@ -141,7 +144,7 @@ export const ContactSection: React.FC = () => {
                   <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold">
                     Facility Hours
                   </div>
-                  <p className="text-xs sm:text-sm text-[#D1D5DB] break-words">
+                  <p className="text-xs sm:text-sm text-[#D1D5DB] break-words [overflow-wrap:anywhere]">
                     Monday – Saturday: 8:00 AM – 6:30 PM (Walk-ins & Appointments Welcome)
                   </p>
                 </div>
@@ -163,37 +166,80 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Clear Vertical Spacing Between the Two Sections */}
-        <div className="my-10 sm:my-14 border-t border-[#232832]" />
+        {/* Clear Vertical Spacing Between the Two Independent Cards */}
+        <div className="my-8 sm:my-14 border-t border-[#232832] w-full" />
 
         {/* =========================================================================
-            BLOCK TWO: OFFICIAL BUSINESS LOCATION
-            Strict Order on all screens:
-            1. Location Map / Navigation Image First
-            2. Title Underneath
-            3. Official Address & Location Description Below Title
-            4. Location / Navigation Functionality
+            CARD TWO: OFFICIAL BUSINESS LOCATION
+            Strict Order on Mobile & All Screens:
+            1. Official Business Location Photograph (Distinct, Non-Duplicate)
+            2. OFFICIAL BUSINESS LOCATION Title Underneath
+            3. Official Address and Location Description
+            4. Location / Driving Directions Functionality
            ========================================================================= */}
         <div className="w-full bg-[#14171D] border border-[#232832] rounded-lg overflow-hidden shadow-lg box-border">
-          {/* 1. Official location map / navigation image first */}
+          {/* 1. Official business location photograph first (with optional interactive map view) */}
           <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full bg-[#0B0D10] overflow-hidden border-b border-[#232832]">
-            <iframe
-              title="ABSIM AUTOMOTIVE Official Business Location Map"
-              src="https://maps.google.com/maps?q=AMCE,+Megenagna,+Addis+Ababa,+Ethiopia&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              className="w-full h-full border-0 block"
-              loading="lazy"
-              aria-label="Google Maps Location for ABSIM Automotive behind AMCE Megenagna"
-            />
+            {activeTab === 'photo' ? (
+              <img
+                src={facilityImage}
+                alt="ABSIM AUTOMOTIVE Official Business Location and Vehicle Inspection Facility in Addis Ababa"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-center block"
+              />
+            ) : (
+              <iframe
+                title="ABSIM AUTOMOTIVE Official Business Location Map"
+                src="https://maps.google.com/maps?q=AMCE,+Megenagna,+Addis+Ababa,+Ethiopia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0 block"
+                loading="lazy"
+                aria-label="Google Maps Location for ABSIM Automotive behind AMCE Megenagna"
+              />
+            )}
+
+            {/* Location Tag */}
+            <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#0B0D10]/90 backdrop-blur-sm border border-[#2D333B] px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white">
+              Official Technical Facility
+            </div>
+
+            {/* View Toggle: Photo / Map */}
+            <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 flex items-center bg-[#0B0D10]/90 backdrop-blur-sm border border-[#2D333B] p-0.5 rounded">
+              <button
+                type="button"
+                onClick={() => setActiveTab('photo')}
+                className={`flex items-center gap-1 px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${
+                  activeTab === 'photo'
+                    ? 'bg-[#8E1A27] text-white shadow-sm'
+                    : 'text-[#9CA3AF] hover:text-white'
+                }`}
+              >
+                <ImageIcon className="w-3 h-3" />
+                <span>Photo</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('map')}
+                className={`flex items-center gap-1 px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${
+                  activeTab === 'map'
+                    ? 'bg-[#8E1A27] text-white shadow-sm'
+                    : 'text-[#9CA3AF] hover:text-white'
+                }`}
+              >
+                <MapIcon className="w-3 h-3" />
+                <span>Map</span>
+              </button>
+            </div>
           </div>
 
-          {/* Content Container Directly Underneath Map Image */}
+          {/* Content Container Directly Underneath Image */}
           <div className="p-4 sm:p-6 w-full box-border">
             {/* 2. Title Underneath */}
             <div className="mb-3">
               <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-1">
                 REGISTERED ADDRESS & ACCESS
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-heading break-words">
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-heading break-words [overflow-wrap:anywhere]">
                 OFFICIAL BUSINESS LOCATION
               </h3>
             </div>
@@ -206,10 +252,10 @@ export const ContactSection: React.FC = () => {
                   <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold">
                     Official Business Address
                   </div>
-                  <p className="text-sm sm:text-base font-bold text-white break-words">
+                  <p className="text-sm sm:text-base font-bold text-white break-words [overflow-wrap:anywhere]">
                     Behind AMCE Industrial Zone, Megenagna
                   </p>
-                  <p className="text-xs sm:text-sm text-[#9CA3AF] break-words">
+                  <p className="text-xs sm:text-sm text-[#9CA3AF] break-words [overflow-wrap:anywhere]">
                     Megenagna Sub-City, Addis Ababa, Ethiopia
                   </p>
                 </div>
@@ -222,15 +268,21 @@ export const ContactSection: React.FC = () => {
                 <div className="space-y-2 text-xs sm:text-sm text-[#D1D5DB]">
                   <div className="flex items-start gap-2 min-w-0">
                     <span className="text-[#8E1A27] font-bold font-mono shrink-0">01.</span>
-                    <span className="break-words min-w-0 flex-1">From Megenagna Roundabout, proceed along the main avenue heading towards the AMCE facility.</span>
+                    <span className="break-words [overflow-wrap:anywhere] min-w-0 flex-1">
+                      From Megenagna Roundabout, proceed along the main avenue heading towards the AMCE facility.
+                    </span>
                   </div>
                   <div className="flex items-start gap-2 min-w-0">
                     <span className="text-[#8E1A27] font-bold font-mono shrink-0">02.</span>
-                    <span className="break-words min-w-0 flex-1">Turn onto the designated access street running immediately behind the main AMCE premises.</span>
+                    <span className="break-words [overflow-wrap:anywhere] min-w-0 flex-1">
+                      Turn onto the designated access street running immediately behind the main AMCE premises.
+                    </span>
                   </div>
                   <div className="flex items-start gap-2 min-w-0">
                     <span className="text-[#8E1A27] font-bold font-mono shrink-0">03.</span>
-                    <span className="break-words min-w-0 flex-1">Enter through the ABSIM AUTOMOTIVE gate with the active “WE ARE OPEN - CAR LAUNDRY” sign.</span>
+                    <span className="break-words [overflow-wrap:anywhere] min-w-0 flex-1">
+                      Enter through the ABSIM AUTOMOTIVE gate with the active “WE ARE OPEN - CAR LAUNDRY” sign.
+                    </span>
                   </div>
                 </div>
               </div>
@@ -245,7 +297,7 @@ export const ContactSection: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 text-xs uppercase tracking-wider font-semibold text-white bg-[#7A1420] hover:bg-[#8E1A27] border border-[#8E1A27] transition-colors rounded-sm shadow-sm"
               >
                 <Navigation className="w-3.5 h-3.5 text-white shrink-0" />
-                <span className="break-words">Get Driving Directions on Google Maps</span>
+                <span className="break-words [overflow-wrap:anywhere]">Get Driving Directions on Google Maps</span>
               </a>
             </div>
           </div>
@@ -254,3 +306,4 @@ export const ContactSection: React.FC = () => {
     </section>
   );
 };
+
