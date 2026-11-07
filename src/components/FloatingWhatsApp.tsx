@@ -13,13 +13,13 @@ export const FloatingWhatsApp: React.FC = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-3.5 py-2.5 bg-[#15191D]/90 backdrop-blur-md border border-[#BCA77A]/50 text-[#F5F4F0] hover:text-[#BCA77A] hover:border-[#BCA77A] rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95 group"
+        className="flex items-center gap-2.5 px-4 py-2.5 bg-[#14171D]/95 backdrop-blur-md border border-[#8E1A27]/80 text-white hover:text-white hover:border-[#8E1A27] rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95 group shadow-[#6B111A]/30"
         aria-label="Direct WhatsApp Chat with ABSIM Automotive"
       >
-        <div className="w-7 h-7 rounded-full bg-[#BCA77A] text-[#090B0D] flex items-center justify-center shrink-0">
+        <div className="w-7 h-7 rounded-full bg-[#7A1420] text-white flex items-center justify-center shrink-0 shadow-inner">
           <MessageSquare className="w-3.5 h-3.5 fill-current" />
         </div>
-        <span className="hidden sm:inline text-xs font-semibold tracking-wider uppercase pr-1">
+        <span className="hidden sm:inline text-xs font-bold tracking-wider uppercase pr-1 text-white">
           WhatsApp Direct
         </span>
       </a>

@@ -1,174 +1,251 @@
 import React from 'react';
-import { MapPin, Phone, MessageSquare, Navigation, Clock, ShieldAlert } from 'lucide-react';
+import { MapPin, Phone, MessageSquare, Navigation, Clock } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
+import entranceImage from '../assets/images/absim_workshop_entrance.jpg';
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-[#090B0D] border-t border-[#1F262D]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Contact Information */}
-          <div className="lg:col-span-6">
-            <div className="text-xs tracking-widest text-[#BCA77A] uppercase font-semibold mb-3">
-              LOCATION & CONTACT
+    <section id="contact" className="py-14 sm:py-20 pb-24 sm:pb-28 bg-[#0E1115] border-b border-[#232832] overflow-x-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full box-border">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-8 sm:mb-10 w-full box-border">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
+            <span>LOCATION & CONTACT</span>
+            <span className="text-neutral-600">·</span>
+            <span className="text-white">ADDIS ABABA</span>
+          </div>
+          <h2 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold text-white leading-tight mb-2.5 font-heading break-words">
+            Visit ABSIM AUTOMOTIVE.
+          </h2>
+          <p className="text-[14px] sm:text-[16px] text-[#9CA3AF] leading-relaxed break-words">
+            Conveniently located behind the AMCE compound in the Megenagna automotive corridor. Reach out directly by phone, WhatsApp, or drop by during business hours.
+          </p>
+        </div>
+
+        {/* Quick Contact Bar: Phone, WhatsApp, Hours (Wrapped & Responsive) */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 sm:mb-12 w-full box-border">
+          {/* Direct Phone */}
+          <a
+            href={`tel:${BRAND_CONFIG.phoneRaw}`}
+            className="flex items-center gap-3 p-3.5 bg-[#14171D] border border-[#232832] hover:border-[#8E1A27]/60 rounded-md transition-colors group min-w-0 w-full box-border"
+          >
+            <div className="w-8 h-8 rounded-sm bg-[#0B0D10] border border-[#8E1A27]/40 flex items-center justify-center shrink-0 text-[#8E1A27]">
+              <Phone className="w-4 h-4" />
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F4F0] leading-tight mb-6 font-serif-brand">
-              VISIT ABSIM AUTOMOTIVE.
-            </h2>
-            <p className="text-base text-[#C4C9CE] leading-relaxed mb-10">
-              Conveniently located in Megenagna, Addis Ababa. Reach out directly by phone or WhatsApp to schedule a drop-off time or request a vehicle inspection.
-            </p>
-
-            <div className="space-y-6">
-              {/* Address Block */}
-              <div className="flex items-start gap-4 p-5 bg-[#15191D] border border-[#242A30] rounded-sm">
-                <div className="w-10 h-10 rounded-sm bg-[#090B0D] border border-[#242A30] flex items-center justify-center shrink-0 text-[#BCA77A]">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xs uppercase tracking-wider text-[#BCA77A] font-semibold mb-1">
-                    Facility Location
-                  </h3>
-                  <p className="text-sm font-medium text-[#F5F4F0] mb-1">
-                    Behind AMCE, Megenagna
-                  </p>
-                  <p className="text-xs text-[#C4C9CE]">
-                    Addis Ababa, Ethiopia
-                  </p>
-                  <div className="mt-3">
-                    <a
-                      href={BRAND_CONFIG.googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-[#BCA77A] hover:underline font-medium"
-                    >
-                      <Navigation className="w-3.5 h-3.5" />
-                      <span>Open in Google Maps</span>
-                    </a>
-                  </div>
-                </div>
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">
+                Direct Call
               </div>
-
-              {/* Direct Phone Block */}
-              <div className="flex items-start gap-4 p-5 bg-[#15191D] border border-[#242A30] rounded-sm">
-                <div className="w-10 h-10 rounded-sm bg-[#090B0D] border border-[#242A30] flex items-center justify-center shrink-0 text-[#BCA77A]">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xs uppercase tracking-wider text-[#BCA77A] font-semibold mb-1">
-                    Direct Phone Line
-                  </h3>
-                  <p className="text-base font-bold text-[#F5F4F0] font-mono mb-1">
-                    <a href={`tel:${BRAND_CONFIG.phoneRaw}`} className="hover:text-[#BCA77A] transition-colors">
-                      {BRAND_CONFIG.phoneDisplay}
-                    </a>
-                  </p>
-                  <p className="text-xs text-[#C4C9CE]">
-                    Tap to call directly from mobile or desktop
-                  </p>
-                </div>
+              <div className="text-xs sm:text-sm font-bold text-white font-mono group-hover:text-[#D1D5DB] transition-colors break-words">
+                {BRAND_CONFIG.phoneDisplay}
               </div>
+            </div>
+          </a>
 
-              {/* WhatsApp Quick Link */}
-              <div className="flex items-start gap-4 p-5 bg-[#15191D] border border-[#242A30] rounded-sm">
-                <div className="w-10 h-10 rounded-sm bg-[#090B0D] border border-[#242A30] flex items-center justify-center shrink-0 text-[#BCA77A]">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xs uppercase tracking-wider text-[#BCA77A] font-semibold mb-1">
-                    WhatsApp Business Chat
-                  </h3>
-                  <p className="text-sm text-[#F5F4F0] mb-2">
-                    Send vehicle photos or voice notes for quick estimates
-                  </p>
-                  <a
-                    href={`https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodeURIComponent('Hello ABSIM Automotive, I would like to inquire about your services.')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#090B0D] bg-[#BCA77A] hover:bg-[#d1bd93] px-3.5 py-1.5 rounded-sm transition-colors"
-                  >
-                    <span>Start WhatsApp Chat</span>
-                  </a>
-                </div>
+          {/* WhatsApp Chat */}
+          <a
+            href={`https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodeURIComponent('Hello ABSIM Automotive, I would like to inquire about your services.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3.5 bg-[#14171D] border border-[#232832] hover:border-[#8E1A27]/60 rounded-md transition-colors group min-w-0 w-full box-border"
+          >
+            <div className="w-8 h-8 rounded-sm bg-[#0B0D10] border border-[#8E1A27]/40 flex items-center justify-center shrink-0 text-[#8E1A27]">
+              <MessageSquare className="w-4 h-4" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">
+                WhatsApp Direct
+              </div>
+              <div className="text-xs sm:text-sm font-bold text-white group-hover:text-[#D1D5DB] transition-colors break-words">
+                Start Chat
+              </div>
+            </div>
+          </a>
+
+          {/* Operating Hours */}
+          <div className="flex items-center gap-3 p-3.5 bg-[#14171D] border border-[#232832] rounded-md min-w-0 w-full box-border">
+            <div className="w-8 h-8 rounded-sm bg-[#0B0D10] border border-[#8E1A27]/40 flex items-center justify-center shrink-0 text-[#8E1A27]">
+              <Clock className="w-4 h-4" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">
+                Working Hours
+              </div>
+              <div className="text-xs sm:text-sm font-medium text-white break-words">
+                Mon – Sat: 8:00 AM – 6:30 PM
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Column: Directional Map Card with Local Landmarks */}
-          <div className="lg:col-span-6">
-            <div className="bg-[#15191D] border border-[#242A30] p-6 sm:p-8 rounded-sm">
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#242A30]">
-                <div>
-                  <h3 className="text-lg font-bold text-[#F5F4F0] font-serif-brand">
-                    Megenagna Studio Access
-                  </h3>
-                  <p className="text-xs text-[#C4C9CE]">
-                    Megenagna Sub-City · AMCE Industrial Zone
+        {/* =========================================================================
+            BLOCK ONE: WORKSHOP & CAR LAUNDRY FACILITY
+            Strict Order on all screens:
+            1. Image First
+            2. Title Underneath
+            3. Short Description
+            4. Corresponding Location Information
+           ========================================================================= */}
+        <div className="w-full bg-[#14171D] border border-[#232832] rounded-lg overflow-hidden shadow-lg box-border">
+          {/* 1. Workshop entrance photograph first */}
+          <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full bg-[#0B0D10] overflow-hidden border-b border-[#232832]">
+            <img
+              src={entranceImage}
+              alt="ABSIM AUTOMOTIVE Workshop & Car Laundry Facility Entrance in Addis Ababa"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-center block"
+            />
+            <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#0B0D10]/90 backdrop-blur-sm border border-[#2D333B] px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white">
+              Facility Entrance Gate
+            </div>
+          </div>
+
+          {/* Content Container Directly Underneath Image */}
+          <div className="p-4 sm:p-6 w-full box-border">
+            {/* 2. Title Underneath */}
+            <div className="mb-3">
+              <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-1">
+                FACILITY LOCATION
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-heading break-words">
+                WORKSHOP & CAR LAUNDRY FACILITY
+              </h3>
+            </div>
+
+            {/* 3. Short description of the facility */}
+            <p className="text-sm sm:text-[15px] text-[#D1D5DB] leading-relaxed mb-4 break-words">
+              Our active automotive care workshop and dedicated Car Laundry yard located within the secure, gated compound behind AMCE. Equipped with high-precision tyre mounting, electronic wheel balancing, Corghi 3D computerized alignment, full walk-under vehicle inspection pit, and high-pressure vehicle washing bays.
+            </p>
+
+            {/* 4. Corresponding location information */}
+            <div className="p-4 bg-[#0B0D10] border border-[#232832] rounded-md space-y-3 mb-4 w-full box-border">
+              <div className="flex items-start gap-2.5 min-w-0">
+                <MapPin className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
+                <div className="min-w-0 flex-1">
+                  <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold">
+                    Facility Address
+                  </div>
+                  <p className="text-sm sm:text-base font-bold text-white break-words">
+                    Behind AMCE Compound, Megenagna
+                  </p>
+                  <p className="text-xs sm:text-sm text-[#9CA3AF] break-words">
+                    Addis Ababa, Ethiopia · Spacious Gated Customer Yard
                   </p>
                 </div>
-                <div className="text-xs font-mono text-[#BCA77A] border border-[#BCA77A]/30 px-2 py-1">
-                  ADDIS ABABA
-                </div>
               </div>
 
-              {/* Stylized Minimalist Map Blueprint Visual */}
-              <div className="relative aspect-[16/10] bg-[#090B0D] border border-[#242A30] rounded-sm p-4 overflow-hidden mb-6 flex flex-col justify-between">
-                {/* Blueprint grid subtle background */}
-                <div
-                  className="absolute inset-0 opacity-15"
-                  style={{
-                    backgroundImage: 'radial-gradient(#C4C9CE 1px, transparent 1px)',
-                    backgroundSize: '20px 20px',
-                  }}
-                />
-
-                <div className="relative z-10 flex items-center justify-between text-xs text-[#C4C9CE]">
-                  <span className="uppercase tracking-widest text-[10px] text-[#BCA77A]">Megenagna Hub</span>
-                  <span className="text-[11px] font-mono">Ring Road Corridor</span>
-                </div>
-
-                {/* Central pin marker representation */}
-                <div className="relative z-10 flex flex-col items-center justify-center my-auto py-6">
-                  <div className="w-12 h-12 rounded-full bg-[#BCA77A]/20 border border-[#BCA77A] flex items-center justify-center text-[#BCA77A] mb-2 animate-pulse">
-                    <MapPin className="w-6 h-6" />
+              <div className="flex items-start gap-2.5 pt-2 border-t border-[#232832] min-w-0">
+                <Clock className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
+                <div className="min-w-0 flex-1">
+                  <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold">
+                    Facility Hours
                   </div>
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-[#F5F4F0] font-serif-brand">ABSIM AUTOMOTIVE</div>
-                    <div className="text-xs text-[#C4C9CE]">Behind AMCE Compound</div>
-                  </div>
-                </div>
-
-                <div className="relative z-10 flex items-center justify-between text-[11px] text-[#C4C9CE]/80 border-t border-[#1F262D] pt-2">
-                  <span>Accessible via Main AMCE Avenue</span>
-                  <span className="text-[#BCA77A]">Ample Secure Parking</span>
+                  <p className="text-xs sm:text-sm text-[#D1D5DB] break-words">
+                    Monday – Saturday: 8:00 AM – 6:30 PM (Walk-ins & Appointments Welcome)
+                  </p>
                 </div>
               </div>
+            </div>
 
-              {/* Driving & Arrival Notes */}
-              <div className="space-y-3 text-xs text-[#C4C9CE] mb-6">
-                <div className="flex items-start gap-2">
-                  <span className="text-[#BCA77A] font-bold font-mono">01.</span>
-                  <span>From Megenagna Roundabout, proceed towards the AMCE facility road.</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-[#BCA77A] font-bold font-mono">02.</span>
-                  <span>Turn into the access street running behind the main AMCE premises.</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-[#BCA77A] font-bold font-mono">03.</span>
-                  <span>Look for ABSIM Automotive vehicle reception gate.</span>
-                </div>
-              </div>
-
-              {/* Google Maps External Action Button */}
+            {/* Navigation Button */}
+            <div>
               <a
                 href={BRAND_CONFIG.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 text-xs uppercase tracking-wider font-semibold text-[#F5F4F0] border border-[#BCA77A]/60 hover:bg-[#BCA77A]/10 transition-colors rounded-sm flex items-center justify-center gap-2 text-center"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2.5 text-xs uppercase tracking-wider font-semibold text-white bg-[#7A1420] hover:bg-[#8E1A27] border border-[#8E1A27] transition-colors rounded-sm shadow-sm"
               >
-                <Navigation className="w-4 h-4 text-[#BCA77A]" />
-                <span>Get Driving Directions on Google Maps</span>
+                <Navigation className="w-3.5 h-3.5 text-white shrink-0" />
+                <span>Open Facility in Google Maps</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Clear Vertical Spacing Between the Two Sections */}
+        <div className="my-10 sm:my-14 border-t border-[#232832]" />
+
+        {/* =========================================================================
+            BLOCK TWO: OFFICIAL BUSINESS LOCATION
+            Strict Order on all screens:
+            1. Location Map / Navigation Image First
+            2. Title Underneath
+            3. Official Address & Location Description Below Title
+            4. Location / Navigation Functionality
+           ========================================================================= */}
+        <div className="w-full bg-[#14171D] border border-[#232832] rounded-lg overflow-hidden shadow-lg box-border">
+          {/* 1. Official location map / navigation image first */}
+          <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full bg-[#0B0D10] overflow-hidden border-b border-[#232832]">
+            <iframe
+              title="ABSIM AUTOMOTIVE Official Business Location Map"
+              src="https://maps.google.com/maps?q=AMCE,+Megenagna,+Addis+Ababa,+Ethiopia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-full border-0 block"
+              loading="lazy"
+              aria-label="Google Maps Location for ABSIM Automotive behind AMCE Megenagna"
+            />
+          </div>
+
+          {/* Content Container Directly Underneath Map Image */}
+          <div className="p-4 sm:p-6 w-full box-border">
+            {/* 2. Title Underneath */}
+            <div className="mb-3">
+              <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-1">
+                REGISTERED ADDRESS & ACCESS
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-heading break-words">
+                OFFICIAL BUSINESS LOCATION
+              </h3>
+            </div>
+
+            {/* 3. Official address and location description below title */}
+            <div className="p-4 bg-[#0B0D10] border border-[#232832] rounded-md space-y-3 mb-4 w-full box-border">
+              <div className="flex items-start gap-2.5 min-w-0">
+                <MapPin className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
+                <div className="min-w-0 flex-1">
+                  <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold">
+                    Official Business Address
+                  </div>
+                  <p className="text-sm sm:text-base font-bold text-white break-words">
+                    Behind AMCE Industrial Zone, Megenagna
+                  </p>
+                  <p className="text-xs sm:text-sm text-[#9CA3AF] break-words">
+                    Megenagna Sub-City, Addis Ababa, Ethiopia
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-[#232832]">
+                <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-2">
+                  Step-by-Step Driving Directions
+                </div>
+                <div className="space-y-2 text-xs sm:text-sm text-[#D1D5DB]">
+                  <div className="flex items-start gap-2 min-w-0">
+                    <span className="text-[#8E1A27] font-bold font-mono shrink-0">01.</span>
+                    <span className="break-words min-w-0 flex-1">From Megenagna Roundabout, proceed along the main avenue heading towards the AMCE facility.</span>
+                  </div>
+                  <div className="flex items-start gap-2 min-w-0">
+                    <span className="text-[#8E1A27] font-bold font-mono shrink-0">02.</span>
+                    <span className="break-words min-w-0 flex-1">Turn onto the designated access street running immediately behind the main AMCE premises.</span>
+                  </div>
+                  <div className="flex items-start gap-2 min-w-0">
+                    <span className="text-[#8E1A27] font-bold font-mono shrink-0">03.</span>
+                    <span className="break-words min-w-0 flex-1">Enter through the ABSIM AUTOMOTIVE gate with the active “WE ARE OPEN - CAR LAUNDRY” sign.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Location and navigation functionality */}
+            <div>
+              <a
+                href={BRAND_CONFIG.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 text-xs uppercase tracking-wider font-semibold text-white bg-[#7A1420] hover:bg-[#8E1A27] border border-[#8E1A27] transition-colors rounded-sm shadow-sm"
+              >
+                <Navigation className="w-3.5 h-3.5 text-white shrink-0" />
+                <span className="break-words">Get Driving Directions on Google Maps</span>
               </a>
             </div>
           </div>

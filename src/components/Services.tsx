@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Check, Clock, ChevronRight, X } from 'lucide-react';
+import { ArrowRight, Check, Clock, X } from 'lucide-react';
 import { SERVICES, ServiceItem } from '../config/brand';
 
 interface ServicesProps {
@@ -18,65 +18,66 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   };
 
   return (
-    <section id="services" className="py-24 sm:py-32 bg-[#0E1115] border-t border-[#1F262D]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
-          <div className="text-xs tracking-widest text-[#BCA77A] uppercase font-semibold mb-3">
-            OUR SERVICES
+    <section id="services" className="py-16 sm:py-20 bg-[#0E1115] border-b border-[#232832]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header with 28-34px desktop headline */}
+        <div className="max-w-3xl mb-12">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
+            <span>OUR SERVICES</span>
+            <span className="text-neutral-600">·</span>
+            <span className="text-white">ADDIS ABABA WORKSHOP</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F4F0] leading-tight mb-5 font-serif-brand">
-            CARE THAT GOES BEYOND THE SURFACE.
+          <h2 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold text-white leading-tight mb-3 font-heading">
+            Specialized Care for Every Vehicle.
           </h2>
-          <p className="text-base sm:text-lg text-[#C4C9CE] leading-relaxed">
-            A considered approach to vehicle cleanliness, presentation, and everyday care.
-            Every process is designed to protect your vehicle’s clear coat and interior surfaces.
+          <p className="text-[15px] sm:text-[16px] text-[#9CA3AF] leading-relaxed">
+            From precision tyre fitting and dynamic balancing to 3D wheel alignment, undercarriage pit inspections, mechanical servicing, and car laundry.
           </p>
         </div>
 
-        {/* Services Grid (6 Proposed Categories) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Services Grid (6 Clean Cards with High-Quality Images) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service) => (
             <article
               key={service.id}
-              className="group relative bg-[#15191D] border border-[#242A30] hover:border-[#BCA77A]/50 transition-all duration-300 rounded-sm overflow-hidden flex flex-col justify-between"
+              className="group bg-[#14171D] border border-[#232832] hover:border-[#8E1A27]/60 transition-all duration-200 rounded-md overflow-hidden flex flex-col justify-between shadow-md hover:shadow-lg"
             >
               <div>
-                {/* Image Container with Restrained Zoom */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-[#090B0D]">
+                {/* Real Image Container - Clear, sharp, unmasked */}
+                <div className="relative aspect-[4/3] bg-[#0B0D10] overflow-hidden border-b border-[#232832]">
                   <img
                     src={service.image}
                     alt={service.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#15191D] via-transparent to-transparent opacity-90" />
                   
-                  {/* Clean Category Label & Code */}
-                  <div className="absolute top-3 left-3 text-[11px] tracking-wider uppercase text-[#C4C9CE] bg-[#090B0D]/80 backdrop-blur-sm px-2.5 py-1 border border-[#242A30]">
+                  {/* Subtle clean badge */}
+                  <div className="absolute top-2.5 left-2.5 text-[10px] tracking-wider uppercase font-semibold text-white bg-[#0B0D10]/85 px-2 py-0.5 rounded border border-[#2D333B]">
                     {service.code} · {service.category}
                   </div>
 
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-xs text-[#C4C9CE]">
-                    <Clock className="w-3.5 h-3.5 text-[#BCA77A]" />
-                    <span className="font-mono text-[11px]">{service.estimatedDuration}</span>
+                  <div className="absolute bottom-2.5 right-2.5 flex items-center gap-1 text-[11px] text-white bg-[#0B0D10]/85 px-2 py-0.5 rounded border border-[#2D333B]">
+                    <Clock className="w-3 h-3 text-[#8E1A27]" />
+                    <span className="font-mono">{service.estimatedDuration}</span>
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold tracking-wide text-[#F5F4F0] group-hover:text-[#BCA77A] transition-colors mb-3 font-serif-brand">
+                <div className="p-5">
+                  <h3 className="text-[17px] font-bold text-white group-hover:text-[#D1D5DB] transition-colors mb-2 font-heading">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#C4C9CE] leading-relaxed mb-5">
+                  <p className="text-[13px] sm:text-[14px] text-[#9CA3AF] leading-relaxed mb-4">
                     {service.shortDesc}
                   </p>
 
                   {/* Highlights List */}
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-1.5 mb-2">
                     {service.features.slice(0, 3).map((feat, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-[#C4C9CE]/90">
-                        <Check className="w-3.5 h-3.5 text-[#BCA77A] shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2 text-[12px] text-[#D1D5DB]">
+                        <Check className="w-3.5 h-3.5 text-[#8E1A27] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -85,27 +86,23 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
               </div>
 
               {/* Bottom Actions */}
-              <div className="px-6 pb-6 pt-2 border-t border-[#242A30]/60 flex items-center justify-between gap-3">
-                <div className="text-xs">
-                  <span className="text-[#C4C9CE]/60 block text-[10px] uppercase tracking-wider">Pricing</span>
-                  <span className="font-semibold text-[#F5F4F0]">Request a Quote</span>
-                </div>
+              <div className="px-5 pb-5 pt-3 border-t border-[#232832]/80 flex items-center justify-between gap-3">
+                <span className="text-[12px] text-[#9CA3AF] font-medium">Standard Pricing</span>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setActiveModalService(service)}
-                    className="p-2 text-xs text-[#C4C9CE] hover:text-[#F5F4F0] transition-colors"
-                    title="View service scope"
+                    className="px-2.5 py-1 text-[12px] text-[#9CA3AF] hover:text-white transition-colors"
                     aria-label={`View details for ${service.title}`}
                   >
                     Details
                   </button>
                   <button
                     onClick={() => handleBookService(service)}
-                    className="px-3.5 py-2 text-xs font-semibold tracking-wider uppercase bg-[#BCA77A]/15 hover:bg-[#BCA77A] text-[#BCA77A] hover:text-[#090B0D] transition-all rounded-sm flex items-center gap-1"
+                    className="px-3 py-1.5 text-[12px] font-semibold uppercase tracking-wider bg-[#7A1420] hover:bg-[#8E1A27] text-white border border-[#8E1A27] transition-colors rounded-sm flex items-center gap-1 shadow-sm"
                   >
                     <span>Book</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>
               </div>
@@ -117,48 +114,48 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
       {/* Service Scope Modal */}
       {activeModalService && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#090B0D]/85 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B0D10]/90 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-full max-w-lg bg-[#15191D] border border-[#242A30] p-6 sm:p-8 rounded-sm text-[#F5F4F0] shadow-2xl">
+          <div className="relative w-full max-w-lg bg-[#14171D] border border-[#2D333B] p-6 rounded-md text-white shadow-2xl">
             <button
               onClick={() => setActiveModalService(null)}
-              className="absolute top-4 right-4 p-2 text-[#C4C9CE] hover:text-[#F5F4F0] transition-colors"
+              className="absolute top-4 right-4 p-1.5 text-[#9CA3AF] hover:text-white transition-colors"
               aria-label="Close details"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="text-xs uppercase tracking-widest text-[#BCA77A] mb-1">
-              Service Scope · {activeModalService.category}
+            <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-bold mb-1">
+              Service Details · {activeModalService.category}
             </div>
-            <h3 className="text-2xl font-bold font-serif-brand mb-3">
+            <h3 className="text-xl font-bold font-heading mb-3">
               {activeModalService.title}
             </h3>
 
-            <p className="text-sm text-[#C4C9CE] leading-relaxed mb-6">
+            <p className="text-[14px] text-[#9CA3AF] leading-relaxed mb-5">
               {activeModalService.fullDesc}
             </p>
 
-            <div className="mb-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-[#F5F4F0] mb-3">
-                Included in This Service
+            <div className="mb-5">
+              <h4 className="text-[12px] font-semibold uppercase tracking-wider text-white mb-2.5">
+                Key Inclusions
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2">
                 {activeModalService.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs text-[#C4C9CE]">
-                    <Check className="w-4 h-4 text-[#BCA77A] shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-2 text-[13px] text-[#D1D5DB]">
+                    <Check className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-[#242A30]">
-              <div className="text-xs text-[#C4C9CE]">
+            <div className="flex items-center justify-between pt-4 border-t border-[#232832]">
+              <div className="text-[12px] text-[#9CA3AF]">
                 <span>Est. Duration: </span>
-                <span className="text-[#F5F4F0] font-mono">{activeModalService.estimatedDuration}</span>
+                <span className="text-white font-mono font-semibold">{activeModalService.estimatedDuration}</span>
               </div>
               <button
                 onClick={() => {
@@ -166,9 +163,9 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                   setActiveModalService(null);
                   handleBookService(s);
                 }}
-                className="px-5 py-2.5 text-xs font-semibold tracking-wider uppercase bg-[#BCA77A] text-[#090B0D] hover:bg-[#d1bd93] transition-colors rounded-sm"
+                className="px-4 py-2 text-[12px] font-semibold tracking-wider uppercase bg-[#7A1420] text-white hover:bg-[#8E1A27] border border-[#8E1A27] transition-colors rounded-sm"
               >
-                Inquire & Book Service
+                Inquire & Book
               </button>
             </div>
           </div>

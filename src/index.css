@@ -2,40 +2,48 @@
 
 @layer base {
   :root {
-    --color-obsidian: #090B0D;
-    --color-graphite: #15191D;
+    --color-maroon: #7A1420;
+    --color-maroon-dark: #4A0C13;
+    --color-maroon-light: #9B1C2B;
+    --color-charcoal: #0B0D10;
+    --color-charcoal-card: #14171D;
+    --color-charcoal-border: #232832;
     --color-silver: #C4C9CE;
-    --color-warm-white: #F5F4F0;
-    --color-champagne: #BCA77A;
+    --color-white: #FFFFFF;
+    --color-light-grey: #E5E7EB;
   }
 
   body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #090B0D;
-    color: #F5F4F0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0B0D10;
+    color: #E5E7EB;
     overflow-x: hidden;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, .font-serif-brand {
-    font-family: 'Cinzel', Georgia, serif;
-    letter-spacing: 0.04em;
+  h1, h2, h3, h4, .font-heading, .font-serif-brand {
+    font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
   }
 }
 
-/* Custom scrollbar for clean luxury feel */
+/* Custom scrollbar in burgundy and charcoal */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090B0D;
+  background: #0B0D10;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #242A30;
-  border-radius: 4px;
+  background: #232832;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #BCA77A;
+  background: #7A1420;
 }

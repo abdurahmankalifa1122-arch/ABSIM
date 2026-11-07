@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowRight, MapPin, MessageSquare, ShieldCheck } from 'lucide-react';
+import { ArrowRight, MapPin, Phone, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
-import heroImage from '../assets/images/hero_luxury_detailing_1792227721860.jpg';
+import entranceImage from '../assets/images/absim_workshop_entrance.jpg';
 
 interface HeroProps {
   onBookClick?: () => void;
@@ -9,10 +9,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
-  const whatsappUrl = `https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-    'Hello ABSIM Automotive, I would like to inquire about booking a vehicle care service.'
-  )}`;
-
   const scrollToServices = (e: React.MouseEvent) => {
     e.preventDefault();
     if (onExploreClick) {
@@ -22,91 +18,103 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
     }
   };
 
-  const scrollToBooking = (e: React.MouseEvent) => {
+  const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (onBookClick) {
-      onBookClick();
-    } else {
-      document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="hero" className="relative min-h-[92vh] lg:min-h-screen flex items-end pb-16 sm:pb-20 pt-32 overflow-hidden bg-[#090B0D]">
-      {/* Background Image with Measured Contrast Scrim */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Luxury black vehicle inside ABSIM Automotive detailing studio in Addis Ababa"
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-center scale-[1.02] filter brightness-90 contrast-[1.05]"
-        />
-        {/* Cinematic Multi-stop Dark Scrim Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#090B0D] via-[#090B0D]/75 to-[#090B0D]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#090B0D]/90 via-[#090B0D]/50 to-transparent" />
-      </div>
+    <section id="hero" className="relative pt-28 pb-14 sm:pt-32 sm:pb-18 lg:pt-36 lg:pb-20 bg-[#0B0D10] border-b border-[#232832]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Left Column: Headline, Copy & Actions */}
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
+            {/* Elegant Brand Tagline Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 w-fit mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8E1A27]" />
+              <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9CA3AF]">
+                ABSIM AUTOMOTIVE
+              </span>
+              <span className="text-neutral-600">·</span>
+              <span className="text-[11px] font-medium tracking-wider text-white">
+                {BRAND_CONFIG.tagline}
+              </span>
+            </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full">
-        <div className="max-w-3xl">
-          {/* Eyebrow & Understated Location */}
-          <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm tracking-widest text-[#BCA77A] uppercase font-semibold mb-4 sm:mb-6">
-            <span>PREMIUM AUTOMOTIVE CARE</span>
-            <span aria-hidden="true" className="text-[#C4C9CE]/40">·</span>
-            <span className="text-[#C4C9CE] flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-[#BCA77A]" />
-              ADDIS ABABA, ETHIOPIA
-            </span>
+            {/* Main Hero Headline (42-52px desktop, 30-36px mobile) */}
+            <h1 className="text-[32px] sm:text-[38px] lg:text-[46px] font-bold text-white leading-[1.18] tracking-tight mb-4 font-heading">
+              Professional Automotive Care. <br />
+              <span className="text-[#D1D5DB] font-medium">Quality You Can Trust.</span>
+            </h1>
+
+            {/* Supporting Text (15-17px) */}
+            <p className="text-[15px] sm:text-[16px] text-[#9CA3AF] leading-relaxed max-w-xl mb-7">
+              Reliable automotive services, modern workshop equipment, and dedicated care for every vehicle.
+            </p>
+
+            {/* Two Attractive Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 mb-8">
+              <a
+                href="#services"
+                onClick={scrollToServices}
+                className="px-5 py-2.5 sm:px-6 sm:py-3 text-[13px] font-semibold tracking-wide text-white bg-[#7A1420] hover:bg-[#8E1A27] border border-[#8E1A27] rounded-sm transition-all duration-200 shadow-md shadow-[#6B111A]/20 flex items-center gap-2"
+              >
+                <span>Explore Our Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href="#contact"
+                onClick={scrollToContact}
+                className="px-5 py-2.5 sm:px-6 sm:py-3 text-[13px] font-semibold tracking-wide text-[#E5E7EB] hover:text-white bg-[#14171D] hover:bg-[#1C212B] border border-[#2D333B] hover:border-[#8E1A27]/60 rounded-sm transition-all duration-200"
+              >
+                <span>Contact Us</span>
+              </a>
+            </div>
+
+            {/* Small Trust Highlights */}
+            <div className="pt-6 border-t border-[#232832] grid grid-cols-3 gap-3 text-left">
+              <div>
+                <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">Location</div>
+                <div className="text-[13px] font-medium text-white truncate">Behind AMCE</div>
+                <div className="text-[11px] text-[#9CA3AF]">Megenagna, Addis Ababa</div>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">Machinery</div>
+                <div className="text-[13px] font-medium text-white truncate">Twin Busch & Corghi</div>
+                <div className="text-[11px] text-[#9CA3AF]">German & Italian tools</div>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">Support</div>
+                <div className="text-[13px] font-medium text-white truncate">Direct Assistance</div>
+                <div className="text-[11px] text-[#9CA3AF]">Phone & WhatsApp</div>
+              </div>
+            </div>
           </div>
 
-          {/* Headline - Editorial Luxury Display */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#F5F4F0] leading-[1.08] mb-6 font-serif-brand">
-            YOUR CAR. <br />
-            <span className="text-[#C4C9CE]">RESTORED TO ITS BEST.</span>
-          </h1>
+          {/* Right Column: High-Quality Business Photograph */}
+          <div className="lg:col-span-6 xl:col-span-6">
+            <div className="relative rounded-md overflow-hidden bg-[#14171D] border border-[#2D333B] shadow-xl">
+              {/* Sharp, uncompromised presentation of the real entrance and facility photograph */}
+              <img
+                src={entranceImage}
+                alt="ABSIM AUTOMOTIVE facility entrance and workshop in Addis Ababa, Ethiopia"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="w-full h-auto object-cover object-center block"
+              />
 
-          {/* Supporting Text */}
-          <p className="text-base sm:text-lg text-[#C4C9CE] leading-relaxed max-w-2xl mb-8 sm:mb-10 font-normal">
-            Professional vehicle cleaning and care, delivered with precision, attention to detail, and respect for your vehicle.
-          </p>
-
-          {/* Primary & Secondary Actions */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 sm:mb-16">
-            <a
-              href="#booking"
-              onClick={scrollToBooking}
-              className="px-7 py-3.5 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#090B0D] bg-[#BCA77A] hover:bg-[#d1bd93] active:scale-[0.99] transition-all rounded-sm text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-[#BCA77A]/10"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>BOOK YOUR SERVICE</span>
-            </a>
-
-            <a
-              href="#services"
-              onClick={scrollToServices}
-              className="px-7 py-3.5 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#F5F4F0] border border-[#C4C9CE]/30 hover:border-[#F5F4F0] hover:bg-white/[0.04] transition-all rounded-sm text-center flex items-center justify-center gap-2"
-            >
-              <span>EXPLORE OUR SERVICES</span>
-              <ArrowRight className="w-4 h-4 text-[#C4C9CE]" />
-            </a>
-          </div>
-
-          {/* Core Commitments Strip - Clean unboxed text with typographic separators */}
-          <div className="pt-8 border-t border-[#1F262D]/80 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-xs text-[#C4C9CE]">
-            <div>
-              <div className="text-[11px] tracking-wider uppercase text-[#BCA77A] mb-1">Method</div>
-              <div className="text-sm font-medium text-[#F5F4F0]">Two-Bucket Gentle Wash</div>
-            </div>
-            <div>
-              <div className="text-[11px] tracking-wider uppercase text-[#BCA77A] mb-1">Products</div>
-              <div className="text-sm font-medium text-[#F5F4F0]">pH-Neutral Chemistry</div>
-            </div>
-            <div>
-              <div className="text-[11px] tracking-wider uppercase text-[#BCA77A] mb-1">Facility</div>
-              <div className="text-sm font-medium text-[#F5F4F0]">Covered Bay Care</div>
-            </div>
-            <div>
-              <div className="text-[11px] tracking-wider uppercase text-[#BCA77A] mb-1">Location</div>
-              <div className="text-sm font-medium text-[#F5F4F0]">Megenagna, Behind AMCE</div>
+              {/* Clean bottom status bar */}
+              <div className="p-3 bg-[#14171D] border-t border-[#232832] flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="text-white font-medium text-[12px]">Workshop & Car Laundry Facility</span>
+                </div>
+                <span className="text-[11px] text-[#9CA3AF] font-mono">Behind AMCE · Gate Access</span>
+              </div>
             </div>
           </div>
         </div>

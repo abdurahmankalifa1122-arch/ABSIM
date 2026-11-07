@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, CheckCircle2, AlertCircle, Phone, Copy, Check, MessageSquare } from 'lucide-react';
+import { Send, AlertCircle, Phone, Copy, Check, MessageSquare } from 'lucide-react';
 import { BRAND_CONFIG, SERVICES } from '../config/brand';
 
 interface BookingSectionProps {
@@ -43,6 +43,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
   const generateWhatsAppMessage = () => {
     const lines = [
       `*ABSIM AUTOMOTIVE — SERVICE INQUIRY*`,
+      `*Tagline:* WORKING HARD, SERVING WELL`,
       `---------------------------------`,
       `*Customer Name:* ${name.trim()}`,
       `*Contact Number:* ${phone.trim()}`,
@@ -51,7 +52,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
       preferredDate ? `*Preferred Date:* ${preferredDate}` : null,
       notes.trim() ? `*Special Notes:* ${notes.trim()}` : null,
       `---------------------------------`,
-      `Inquiry generated via ABSIM Automotive website.`,
+      `Facility: Behind AMCE, Megenagna, Addis Ababa`,
     ].filter(Boolean);
 
     return lines.join('\n');
@@ -69,7 +70,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodedMessage}`;
 
-    // Open WhatsApp in new tab / app
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -85,30 +85,31 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
   };
 
   return (
-    <section id="booking" className="py-24 sm:py-32 bg-[#0E1115] border-t border-[#1F262D]">
-      <div className="max-w-4xl mx-auto px-5 sm:px-8">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
-          <div className="text-xs tracking-widest text-[#BCA77A] uppercase font-semibold mb-3">
-            DIRECT INQUIRY
+    <section id="booking" className="py-16 sm:py-20 bg-[#0B0D10] border-b border-[#232832]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header: 28-34px */}
+        <div className="text-center max-w-xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
+            <span>BOOK A SERVICE</span>
+            <span className="text-neutral-600">·</span>
+            <span className="text-white">DIRECT INQUIRY</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F4F0] leading-tight mb-4 font-serif-brand">
-            YOUR NEXT CLEAN STARTS HERE.
+          <h2 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold text-white leading-tight mb-2.5 font-heading">
+            Schedule Your Visit.
           </h2>
-          <p className="text-base text-[#C4C9CE] leading-relaxed">
-            Tell us what your vehicle needs, and get in touch to arrange your service.
-            Submitting this form prepares your inquiry directly for WhatsApp communication with our team.
+          <p className="text-[14px] sm:text-[15px] text-[#9CA3AF] leading-relaxed">
+            Select the service your vehicle requires. Submitting prepares an immediate WhatsApp message directly for our Addis Ababa team.
           </p>
         </div>
 
-        {/* Booking Form Box */}
-        <div className="bg-[#15191D] border border-[#242A30] p-6 sm:p-10 rounded-sm shadow-xl">
-          <form onSubmit={handleSubmit} noValidate className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Booking Form Card */}
+        <div className="bg-[#14171D] border border-[#232832] p-5 sm:p-8 rounded-md shadow-lg">
+          <form onSubmit={handleSubmit} noValidate className="space-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {/* Customer Name */}
               <div>
-                <label htmlFor="customer-name" className="block text-xs uppercase tracking-wider text-[#C4C9CE] mb-2 font-medium">
-                  Your Name <span className="text-[#BCA77A]">*</span>
+                <label htmlFor="customer-name" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
+                  Your Name <span className="text-[#8E1A27]">*</span>
                 </label>
                 <input
                   id="customer-name"
@@ -120,15 +121,15 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                     if (hasAttemptedSubmit && errors.name) setErrors({ ...errors, name: undefined });
                   }}
                   placeholder="e.g. Abebe Kebede"
-                  className={`w-full bg-[#090B0D] border ${
-                    errors.name ? 'border-red-500/80 focus:border-red-500' : 'border-[#242A30] focus:border-[#BCA77A]'
-                  } rounded-sm px-4 py-3 text-sm text-[#F5F4F0] placeholder-[#C4C9CE]/40 focus:outline-none transition-colors`}
+                  className={`w-full bg-[#0B0D10] border ${
+                    errors.name ? 'border-red-500/80 focus:border-red-500' : 'border-[#2D333B] focus:border-[#8E1A27]'
+                  } rounded-sm px-3.5 py-2.5 text-sm text-white placeholder-[#9CA3AF]/40 focus:outline-none transition-colors`}
                   aria-invalid={errors.name ? 'true' : 'false'}
                   aria-describedby={errors.name ? 'name-error' : undefined}
                 />
                 {errors.name && (
-                  <p id="name-error" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
-                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                  <p id="name-error" className="mt-1 text-xs text-red-400 flex items-center gap-1">
+                    <AlertCircle className="w-3 h-3 shrink-0" />
                     <span>{errors.name}</span>
                   </p>
                 )}
@@ -136,8 +137,8 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
 
               {/* Phone or WhatsApp */}
               <div>
-                <label htmlFor="customer-phone" className="block text-xs uppercase tracking-wider text-[#C4C9CE] mb-2 font-medium">
-                  Phone or WhatsApp <span className="text-[#BCA77A]">*</span>
+                <label htmlFor="customer-phone" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
+                  Phone or WhatsApp <span className="text-[#8E1A27]">*</span>
                 </label>
                 <input
                   id="customer-phone"
@@ -149,41 +150,41 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                     if (hasAttemptedSubmit && errors.phone) setErrors({ ...errors, phone: undefined });
                   }}
                   placeholder="e.g. +251 91 123 4567"
-                  className={`w-full bg-[#090B0D] border ${
-                    errors.phone ? 'border-red-500/80 focus:border-red-500' : 'border-[#242A30] focus:border-[#BCA77A]'
-                  } rounded-sm px-4 py-3 text-sm text-[#F5F4F0] placeholder-[#C4C9CE]/40 focus:outline-none transition-colors`}
+                  className={`w-full bg-[#0B0D10] border ${
+                    errors.phone ? 'border-red-500/80 focus:border-red-500' : 'border-[#2D333B] focus:border-[#8E1A27]'
+                  } rounded-sm px-3.5 py-2.5 text-sm text-white placeholder-[#9CA3AF]/40 focus:outline-none transition-colors`}
                   aria-invalid={errors.phone ? 'true' : 'false'}
                   aria-describedby={errors.phone ? 'phone-error' : undefined}
                 />
                 {errors.phone && (
-                  <p id="phone-error" className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
-                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                  <p id="phone-error" className="mt-1 text-xs text-red-400 flex items-center gap-1">
+                    <AlertCircle className="w-3 h-3 shrink-0" />
                     <span>{errors.phone}</span>
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Vehicle Make and Model */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {/* Vehicle */}
               <div>
-                <label htmlFor="vehicle-info" className="block text-xs uppercase tracking-wider text-[#C4C9CE] mb-2 font-medium">
-                  Vehicle Make & Model <span className="text-[#C4C9CE]/50 text-[10px]">(Optional)</span>
+                <label htmlFor="vehicle-info" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
+                  Vehicle Make & Model <span className="text-[#9CA3AF]/60 text-[10px]">(Optional)</span>
                 </label>
                 <input
                   id="vehicle-info"
                   type="text"
                   value={vehicle}
                   onChange={(e) => setVehicle(e.target.value)}
-                  placeholder="e.g. Toyota Land Cruiser / Mercedes E-Class"
-                  className="w-full bg-[#090B0D] border border-[#242A30] focus:border-[#BCA77A] rounded-sm px-4 py-3 text-sm text-[#F5F4F0] placeholder-[#C4C9CE]/40 focus:outline-none transition-colors"
+                  placeholder="e.g. Toyota Land Cruiser / Mercedes"
+                  className="w-full bg-[#0B0D10] border border-[#2D333B] focus:border-[#8E1A27] rounded-sm px-3.5 py-2.5 text-sm text-white placeholder-[#9CA3AF]/40 focus:outline-none transition-colors"
                 />
               </div>
 
-              {/* Desired Service */}
+              {/* Service */}
               <div>
-                <label htmlFor="desired-service" className="block text-xs uppercase tracking-wider text-[#C4C9CE] mb-2 font-medium">
-                  Desired Service <span className="text-[#BCA77A]">*</span>
+                <label htmlFor="desired-service" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
+                  Desired Service <span className="text-[#8E1A27]">*</span>
                 </label>
                 <select
                   id="desired-service"
@@ -192,10 +193,10 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                     setService(e.target.value);
                     if (onServiceChange) onServiceChange(e.target.value);
                   }}
-                  className="w-full bg-[#090B0D] border border-[#242A30] focus:border-[#BCA77A] rounded-sm px-4 py-3 text-sm text-[#F5F4F0] focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-[#0B0D10] border border-[#2D333B] focus:border-[#8E1A27] rounded-sm px-3.5 py-2.5 text-sm text-white focus:outline-none transition-colors cursor-pointer"
                 >
                   {SERVICES.map((s) => (
-                    <option key={s.id} value={s.title} className="bg-[#15191D] text-[#F5F4F0]">
+                    <option key={s.id} value={s.title} className="bg-[#14171D] text-white">
                       {s.code}. {s.title} ({s.estimatedDuration})
                     </option>
                   ))}
@@ -203,11 +204,11 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {/* Preferred Date */}
               <div>
-                <label htmlFor="preferred-date" className="block text-xs uppercase tracking-wider text-[#C4C9CE] mb-2 font-medium">
-                  Preferred Date <span className="text-[#C4C9CE]/50 text-[10px]">(Optional)</span>
+                <label htmlFor="preferred-date" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
+                  Preferred Date <span className="text-[#9CA3AF]/60 text-[10px]">(Optional)</span>
                 </label>
                 <input
                   id="preferred-date"
@@ -215,60 +216,61 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   value={preferredDate}
                   onChange={(e) => setPreferredDate(e.target.value)}
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full bg-[#090B0D] border border-[#242A30] focus:border-[#BCA77A] rounded-sm px-4 py-3 text-sm text-[#F5F4F0] focus:outline-none transition-colors"
+                  className="w-full bg-[#0B0D10] border border-[#2D333B] focus:border-[#8E1A27] rounded-sm px-3.5 py-2.5 text-sm text-white focus:outline-none transition-colors"
                 />
               </div>
 
               {/* Call Note */}
               <div className="flex flex-col justify-end">
-                <div className="p-3 bg-[#090B0D] border border-[#242A30] text-xs text-[#C4C9CE]">
-                  <div className="text-[#BCA77A] font-medium mb-1">Direct Assistance</div>
-                  <div>Prefer to speak directly? Call <a href={`tel:${BRAND_CONFIG.phoneRaw}`} className="text-[#F5F4F0] underline font-mono">{BRAND_CONFIG.phoneDisplay}</a></div>
+                <div className="p-2.5 bg-[#0B0D10] border border-[#232832] text-xs text-[#9CA3AF] rounded-sm">
+                  <div className="text-white font-medium mb-0.5 flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5 text-[#8E1A27]" />
+                    <span>Prefer to call directly?</span>
+                  </div>
+                  <div><a href={`tel:${BRAND_CONFIG.phoneRaw}`} className="text-[#8E1A27] font-semibold font-mono hover:underline">{BRAND_CONFIG.phoneDisplay}</a></div>
                 </div>
               </div>
             </div>
 
-            {/* Additional Notes */}
+            {/* Notes */}
             <div>
-              <label htmlFor="additional-notes" className="block text-xs uppercase tracking-wider text-[#C4C9CE] mb-2 font-medium">
-                Additional Notes or Specific Requests <span className="text-[#C4C9CE]/50 text-[10px]">(Optional)</span>
+              <label htmlFor="additional-notes" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
+                Specific Concerns or Vehicle Notes <span className="text-[#9CA3AF]/60 text-[10px]">(Optional)</span>
               </label>
               <textarea
                 id="additional-notes"
-                rows={3}
+                rows={2}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Mention any stains, pet hair, paint scratch concerns, or timing preferences..."
-                className="w-full bg-[#090B0D] border border-[#242A30] focus:border-[#BCA77A] rounded-sm px-4 py-3 text-sm text-[#F5F4F0] placeholder-[#C4C9CE]/40 focus:outline-none transition-colors resize-none"
+                placeholder="Mention wheel vibration, pull to side, tyre noise, wash request, or timing..."
+                className="w-full bg-[#0B0D10] border border-[#2D333B] focus:border-[#8E1A27] rounded-sm px-3.5 py-2.5 text-sm text-white placeholder-[#9CA3AF]/40 focus:outline-none transition-colors resize-none"
               />
             </div>
 
-            {/* Transparent Action Notice */}
-            <div className="p-4 bg-[#090B0D] border border-[#242A30] rounded-sm text-xs text-[#C4C9CE] flex items-start gap-3">
-              <MessageSquare className="w-4 h-4 text-[#BCA77A] shrink-0 mt-0.5" />
+            {/* Notice */}
+            <div className="p-3 bg-[#0B0D10] border border-[#232832] rounded-sm text-xs text-[#9CA3AF] flex items-start gap-2.5">
+              <MessageSquare className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
               <div>
-                <strong className="text-[#F5F4F0] block mb-0.5">How this booking works:</strong>
-                Clicking <span className="text-[#BCA77A]">REQUEST A BOOKING</span> will open WhatsApp on your phone or computer with your message ready to send to ABSIM Automotive at <span className="font-mono text-[#F5F4F0]">{BRAND_CONFIG.phoneDisplay}</span>. No prepayment is required.
+                Clicking <span className="text-white font-semibold">REQUEST A BOOKING</span> opens WhatsApp with your pre-filled inquiry to ABSIM AUTOMOTIVE ({BRAND_CONFIG.phoneDisplay}). Walk-ins are also welcome behind AMCE, Megenagna.
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-4 border-t border-[#242A30]">
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-[#232832]">
               <button
                 type="button"
                 onClick={handleCopy}
-                className="px-4 py-3 text-xs uppercase tracking-wider font-semibold text-[#C4C9CE] hover:text-[#F5F4F0] border border-[#242A30] hover:border-[#C4C9CE]/40 transition-colors rounded-sm flex items-center justify-center gap-2"
-                title="Copy inquiry text to clipboard"
+                className="px-3.5 py-2.5 text-[12px] uppercase tracking-wider font-semibold text-[#D1D5DB] hover:text-white border border-[#2D333B] hover:border-[#8E1A27] transition-colors rounded-sm flex items-center justify-center gap-1.5"
               >
-                {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                <span>{copied ? 'Details Copied' : 'Copy Inquiry Text'}</span>
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                <span>{copied ? 'Details Copied' : 'Copy Inquiry'}</span>
               </button>
 
               <button
                 type="submit"
-                className="px-8 py-3.5 text-xs sm:text-sm uppercase tracking-wider font-semibold text-[#090B0D] bg-[#BCA77A] hover:bg-[#d1bd93] active:scale-[0.99] transition-all rounded-sm flex items-center justify-center gap-2 shadow-lg"
+                className="px-6 py-2.5 text-[13px] uppercase tracking-wider font-semibold text-white bg-[#7A1420] hover:bg-[#8E1A27] border border-[#8E1A27] active:scale-[0.99] transition-all rounded-sm flex items-center justify-center gap-2 shadow-md shadow-[#6B111A]/20"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-3.5 h-3.5" />
                 <span>REQUEST A BOOKING</span>
               </button>
             </div>
