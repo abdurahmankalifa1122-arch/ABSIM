@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth bg-[#0B0D10] text-[#F3F4F6]">
+<html lang="en" class="scroll-smooth bg-[#0B0D10] text-[#F3F4F6]" style="background-color: #0B0D10; color: #F3F4F6;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,9 +22,19 @@
       content="Professional automotive care in Addis Ababa, Ethiopia. Tyre changing, wheel balancing, wheel alignment, underbody inspection pit, and car laundry. Working Hard, Serving Well."
     />
 
+    <!-- GitHub Pages relative asset path fix: ensures trailing slash on directory URLs -->
+    <script>
+      (function() {
+        var path = window.location.pathname;
+        if (path.length > 1 && !path.endsWith('/') && !path.split('/').pop().includes('.')) {
+          window.location.replace(window.location.origin + path + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
     <!-- Google Fonts: Inter & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -52,8 +62,34 @@
     }
     </script>
   </head>
-  <body class="bg-[#0B0D10] text-[#F3F4F6] selection:bg-[#7A1420]/30 selection:text-[#FFFFFF] antialiased">
+  <body class="bg-[#0B0D10] text-[#F3F4F6] selection:bg-[#7A1420]/30 selection:text-[#FFFFFF] antialiased" style="background-color: #0B0D10; color: #F3F4F6; margin: 0; min-height: 100vh;">
     <div id="root"></div>
+
+    <!-- Diagnostic fallback if raw unbuilt files are served by GitHub Pages instead of dist -->
+    <script>
+      window.addEventListener('error', function(e) {
+        var root = document.getElementById('root');
+        if (root && (!root.children || root.children.length === 0)) {
+          var isRawTsx = document.querySelector('script[src*="main.tsx"]');
+          if (isRawTsx && window.location.hostname.includes('github.io')) {
+            root.innerHTML = '<div style="background-color:#0B0D10;color:#E5E7EB;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:system-ui,-apple-system,sans-serif;min-height:100vh;box-sizing:border-box;">' +
+              '<div style="max-width:560px;background-color:#14171D;border:1px solid #2D333B;padding:32px 24px;border-radius:8px;box-shadow:0 12px 30px rgba(0,0,0,0.6);">' +
+              '<h1 style="color:#FFFFFF;font-size:22px;font-weight:700;margin:0 0 8px 0;letter-spacing:0.5px;">ABSIM AUTOMOTIVE</h1>' +
+              '<p style="color:#8E1A27;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 16px 0;">GitHub Pages Setup Action Required</p>' +
+              '<p style="color:#9CA3AF;font-size:14px;line-height:1.6;margin:0 0 20px 0;">GitHub Pages is currently serving the raw repository source instead of the Vite production build.</p>' +
+              '<div style="text-align:left;background-color:#0B0D10;border:1px solid #232832;padding:16px;border-radius:6px;font-size:13px;line-height:1.7;color:#D1D5DB;margin-bottom:24px;">' +
+              '<strong style="color:#FFFFFF;">To activate your live website:</strong><br/>' +
+              '1. Go to your repository <strong>Settings</strong> &rarr; <strong>Pages</strong>.<br/>' +
+              '2. Under <strong>Build and deployment</strong> &rarr; <strong>Source</strong>, select <span style="color:#8E1A27;font-weight:600;">GitHub Actions</span>.<br/>' +
+              '3. The automated deployment workflow will immediately build and publish your website.' +
+              '</div>' +
+              '<a href="https://github.com" style="display:inline-block;padding:10px 22px;background-color:#7A1420;color:#ffffff;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.5px;">Open GitHub Repository Settings</a>' +
+              '</div></div>';
+          }
+        }
+      });
+    </script>
+
     <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
