@@ -3,11 +3,7 @@ import { Menu, X, ArrowUpRight, Phone } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
 import { AbsimLogo } from './AbsimLogo';
 
-interface NavbarProps {
-  onSelectService?: (serviceName: string) => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = () => {
+export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -47,7 +43,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-6">
-          {/* Zone 1: Brand Logo & Wordmark */}
           <a
             href="#hero"
             onClick={(e) => handleLinkClick(e, '#hero')}
@@ -57,7 +52,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
             <AbsimLogo variant="compact" />
           </a>
 
-          {/* Zone 2: Navigation Links */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-xs tracking-wider uppercase font-semibold text-[#C4C9CE]">
             {navLinks.map((link) => (
               <a
@@ -71,7 +65,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
             ))}
           </nav>
 
-          {/* Zone 3: Call & Book Button */}
           <div className="hidden sm:flex items-center gap-4 shrink-0">
             <a
               href={`tel:${BRAND_CONFIG.phoneRaw}`}
@@ -90,7 +83,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-[#C4C9CE] hover:text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-[#8E1A27]"
@@ -102,7 +94,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
         </div>
       </header>
 
-      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 z-40 bg-[#0B0D10]/98 backdrop-blur-xl md:hidden flex flex-col justify-between pt-24 pb-10 px-6 sm:px-8 transition-opacity duration-200"

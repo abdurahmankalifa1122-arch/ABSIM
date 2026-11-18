@@ -42,7 +42,6 @@ export const Gallery: React.FC = () => {
   return (
     <section id="workshop" className="py-16 sm:py-20 bg-[#0E1115] border-b border-[#232832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header & Filter Controls: 28-34px heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
@@ -58,7 +57,6 @@ export const Gallery: React.FC = () => {
             </p>
           </div>
 
-          {/* Filter Buttons */}
           <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#14171D] border border-[#232832] rounded-md">
             {categories.map((cat) => (
               <button
@@ -79,7 +77,6 @@ export const Gallery: React.FC = () => {
           </div>
         </div>
 
-        {/* Gallery Grid - Crisp images without muddy dark gradient overlays */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredItems.map((item, index) => (
             <div
@@ -96,10 +93,8 @@ export const Gallery: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 block"
                 />
 
-                {/* Subtle dark gradient only at very bottom for label legibility */}
                 <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0B0D10]/90 to-transparent pointer-events-none" />
 
-                {/* Hover overlay hint */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/25">
                   <div className="p-2.5 rounded-full bg-[#0B0D10]/90 border border-[#8E1A27] text-white">
                     <ZoomIn className="w-4 h-4" />
@@ -119,7 +114,6 @@ export const Gallery: React.FC = () => {
           ))}
         </div>
 
-        {/* Real Location Notice */}
         <div className="mt-6 flex items-center gap-2 text-xs text-[#9CA3AF]">
           <MapPin className="w-3.5 h-3.5 text-[#8E1A27] shrink-0" />
           <span>
@@ -128,7 +122,6 @@ export const Gallery: React.FC = () => {
         </div>
       </div>
 
-      {/* Accessible Lightbox Modal */}
       {lightboxIndex !== null && filteredItems[lightboxIndex] && (
         <div
           onClick={() => setLightboxIndex(null)}

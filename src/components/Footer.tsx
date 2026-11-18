@@ -14,7 +14,6 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#0B0D10] text-[#9CA3AF] pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 border-b border-[#232832]">
-          {/* Brand Col */}
           <div className="lg:col-span-5">
             <a
               href="#hero"
@@ -31,7 +30,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Nav Links */}
           <div className="lg:col-span-3">
             <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-bold mb-3">
               Navigation
@@ -75,7 +73,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact & Hours */}
           <div className="lg:col-span-4">
             <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-bold mb-3">
               Direct Contact
@@ -115,7 +112,6 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#9CA3AF]">
           <div>
             © {currentYear} {BRAND_CONFIG.name} — {BRAND_CONFIG.tagline}. Addis Ababa, Ethiopia.

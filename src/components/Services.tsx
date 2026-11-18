@@ -20,7 +20,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   return (
     <section id="services" className="py-16 sm:py-20 bg-[#0E1115] border-b border-[#232832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with 28-34px desktop headline */}
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
             <span>OUR SERVICES</span>
@@ -35,7 +34,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           </p>
         </div>
 
-        {/* Services Grid (6 Clean Cards with High-Quality Images) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service) => (
             <article
@@ -43,7 +41,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
               className="group bg-[#14171D] border border-[#232832] hover:border-[#8E1A27]/60 transition-all duration-200 rounded-md overflow-hidden flex flex-col justify-between shadow-md hover:shadow-lg"
             >
               <div>
-                {/* Real Image Container - Clear, sharp, unmasked */}
                 <div className="relative aspect-[4/3] bg-[#0B0D10] overflow-hidden border-b border-[#232832]">
                   <img
                     src={service.image}
@@ -52,8 +49,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                     decoding="async"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
-                  
-                  {/* Subtle clean badge */}
+
                   <div className="absolute top-2.5 left-2.5 text-[10px] tracking-wider uppercase font-semibold text-white bg-[#0B0D10]/85 px-2 py-0.5 rounded border border-[#2D333B]">
                     {service.code} · {service.category}
                   </div>
@@ -64,7 +60,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                   </div>
                 </div>
 
-                {/* Card Content */}
                 <div className="p-5">
                   <h3 className="text-[17px] font-bold text-white group-hover:text-[#D1D5DB] transition-colors mb-2 font-heading">
                     {service.title}
@@ -73,7 +68,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                     {service.shortDesc}
                   </p>
 
-                  {/* Highlights List */}
                   <ul className="space-y-1.5 mb-2">
                     {service.features.slice(0, 3).map((feat, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-[12px] text-[#D1D5DB]">
@@ -85,7 +79,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                 </div>
               </div>
 
-              {/* Bottom Actions */}
               <div className="px-5 pb-5 pt-3 border-t border-[#232832]/80 flex items-center justify-between gap-3">
                 <span className="text-[12px] text-[#9CA3AF] font-medium">Standard Pricing</span>
 
@@ -111,7 +104,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         </div>
       </div>
 
-      {/* Service Scope Modal */}
       {activeModalService && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B0D10]/90 backdrop-blur-sm"

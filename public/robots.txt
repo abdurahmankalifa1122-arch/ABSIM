@@ -9,3 +9,5 @@ Allow: /
 
 User-agent: Google-Favicon
 Allow: /
+
+Sitemap: https://absimautomotive.com/sitemap.xml

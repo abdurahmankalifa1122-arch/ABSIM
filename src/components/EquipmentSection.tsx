@@ -6,7 +6,6 @@ export const EquipmentSection: React.FC = () => {
   return (
     <section id="equipment" className="py-16 sm:py-20 bg-[#0B0D10] text-[#E5E7EB] border-b border-[#232832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header: 28-34px */}
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
             <span>OUR EQUIPMENT</span>
@@ -21,7 +20,6 @@ export const EquipmentSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Equipment Cards: Crisp, balanced presentation */}
         <div className="space-y-8">
           {WORKSHOP_EQUIPMENT.map((item, index) => {
             const isReversed = index % 2 === 1;
@@ -31,7 +29,6 @@ export const EquipmentSection: React.FC = () => {
                 className="bg-[#14171D] border border-[#232832] hover:border-[#8E1A27]/50 transition-colors rounded-md overflow-hidden p-5 sm:p-6 shadow-md"
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
-                  {/* Photo Column - Clear, unmasked photograph */}
                   <div className={`lg:col-span-5 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
                     <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-[#0B0D10] border border-[#2D333B]">
                       <img
@@ -42,7 +39,6 @@ export const EquipmentSection: React.FC = () => {
                         className="w-full h-full object-cover block"
                       />
 
-                      {/* Equipment Model Tag */}
                       <div className="absolute top-2.5 left-2.5 bg-[#0B0D10]/85 px-2.5 py-1 border border-[#2D333B] rounded text-[10px] font-semibold uppercase tracking-wider text-white">
                         {item.category}
                       </div>
@@ -54,7 +50,6 @@ export const EquipmentSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Details Column */}
                   <div className={`lg:col-span-7 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
                     <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-1">
                       Machine 0{index + 1} · {item.category}
@@ -70,7 +65,6 @@ export const EquipmentSection: React.FC = () => {
                       {item.description}
                     </p>
 
-                    {/* Specifications List */}
                     <div className="mb-4">
                       <h4 className="text-[11px] font-semibold uppercase tracking-wider text-white mb-2 flex items-center gap-1.5">
                         <Cpu className="w-3.5 h-3.5 text-[#8E1A27]" />
@@ -86,7 +80,6 @@ export const EquipmentSection: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Inquire link */}
                     <div className="pt-3 border-t border-[#232832]">
                       <a
                         href="#booking"

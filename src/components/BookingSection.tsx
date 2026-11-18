@@ -87,7 +87,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
   return (
     <section id="booking" className="py-16 sm:py-20 bg-[#0B0D10] border-b border-[#232832]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header: 28-34px */}
         <div className="text-center max-w-xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
             <span>BOOK A SERVICE</span>
@@ -102,11 +101,9 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
           </p>
         </div>
 
-        {/* Booking Form Card */}
         <div className="bg-[#14171D] border border-[#232832] p-5 sm:p-8 rounded-md shadow-lg">
           <form onSubmit={handleSubmit} noValidate className="space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {/* Customer Name */}
               <div>
                 <label htmlFor="customer-name" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
                   Your Name <span className="text-[#8E1A27]">*</span>
@@ -135,7 +132,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                 )}
               </div>
 
-              {/* Phone or WhatsApp */}
               <div>
                 <label htmlFor="customer-phone" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
                   Phone or WhatsApp <span className="text-[#8E1A27]">*</span>
@@ -166,7 +162,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {/* Vehicle */}
               <div>
                 <label htmlFor="vehicle-info" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
                   Vehicle Make & Model <span className="text-[#9CA3AF]/60 text-[10px]">(Optional)</span>
@@ -181,7 +176,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                 />
               </div>
 
-              {/* Service */}
               <div>
                 <label htmlFor="desired-service" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
                   Desired Service <span className="text-[#8E1A27]">*</span>
@@ -205,7 +199,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {/* Preferred Date */}
               <div>
                 <label htmlFor="preferred-date" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
                   Preferred Date <span className="text-[#9CA3AF]/60 text-[10px]">(Optional)</span>
@@ -220,7 +213,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                 />
               </div>
 
-              {/* Call Note */}
               <div className="flex flex-col justify-end">
                 <div className="p-2.5 bg-[#0B0D10] border border-[#232832] text-xs text-[#9CA3AF] rounded-sm">
                   <div className="text-white font-medium mb-0.5 flex items-center gap-1.5">
@@ -232,7 +224,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               </div>
             </div>
 
-            {/* Notes */}
             <div>
               <label htmlFor="additional-notes" className="block text-[12px] uppercase tracking-wider text-[#D1D5DB] mb-1.5 font-medium">
                 Specific Concerns or Vehicle Notes <span className="text-[#9CA3AF]/60 text-[10px]">(Optional)</span>
@@ -247,7 +238,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               />
             </div>
 
-            {/* Notice */}
             <div className="p-3 bg-[#0B0D10] border border-[#232832] rounded-sm text-xs text-[#9CA3AF] flex items-start gap-2.5">
               <MessageSquare className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
               <div>
@@ -255,7 +245,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               </div>
             </div>
 
-            {/* Actions */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-[#232832]">
               <button
                 type="button"

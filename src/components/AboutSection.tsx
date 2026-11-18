@@ -8,7 +8,6 @@ export const AboutSection: React.FC = () => {
     <section id="about" className="py-16 sm:py-20 bg-[#0B0D10] text-[#E5E7EB] border-b border-[#232832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Real Entrance Photo without dark overlays */}
           <div className="lg:col-span-6">
             <div className="rounded-md overflow-hidden bg-[#14171D] border border-[#2D333B] shadow-xl">
               <img
@@ -29,7 +28,6 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Editorial Copy with elegant typography */}
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-3">
               <span>ABOUT ABSIM AUTOMOTIVE</span>
@@ -37,13 +35,11 @@ export const AboutSection: React.FC = () => {
               <span className="text-white">{BRAND_CONFIG.tagline}</span>
             </div>
 
-            {/* Section heading: 28-34px desktop */}
             <h2 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold text-white leading-tight mb-4 font-heading">
               Dedicated to Precision. <br />
               <span className="text-[#D1D5DB] font-normal">Built on Integrity.</span>
             </h2>
 
-            {/* Body text: 15-17px */}
             <p className="text-[15px] sm:text-[16px] text-[#9CA3AF] leading-relaxed mb-4">
               Located in <strong className="text-white font-medium">Megenagna, behind AMCE</strong> in Addis Ababa, ABSIM AUTOMOTIVE operates on an uncompromising principle: <span className="text-white font-medium">“WORKING HARD, SERVING WELL.”</span>
             </p>
@@ -52,7 +48,6 @@ export const AboutSection: React.FC = () => {
               We provide dependable vehicle care equipped with certified European machinery — including German Twin Busch tyre and balancing systems, Italian Corghi computerized alignment, a reinforced walk-under vehicle inspection pit, and high-capacity ABAC industrial pneumatics.
             </p>
 
-            {/* 4 Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
               <div className="p-3 bg-[#14171D] rounded-sm border border-[#232832]">
                 <div className="flex items-center gap-2 mb-1">
@@ -95,7 +90,6 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Action buttons */}
             <div className="flex items-center gap-3">
               <a
                 href="#equipment"

@@ -1,14 +1,13 @@
 import React from 'react';
-import { ArrowRight, MapPin, Phone, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
 import entranceImage from '../assets/images/absim_workshop_entrance.jpg';
 
 interface HeroProps {
-  onBookClick?: () => void;
   onExploreClick?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
+export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   const scrollToServices = (e: React.MouseEvent) => {
     e.preventDefault();
     if (onExploreClick) {
@@ -27,9 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
     <section id="hero" className="relative pt-28 pb-14 sm:pt-32 sm:pb-18 lg:pt-36 lg:pb-20 bg-[#0B0D10] border-b border-[#232832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left Column: Headline, Copy & Actions */}
           <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
-            {/* Elegant Brand Tagline Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 w-fit mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#8E1A27]" />
               <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9CA3AF]">
@@ -41,18 +38,15 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
               </span>
             </div>
 
-            {/* Main Hero Headline (42-52px desktop, 30-36px mobile) */}
             <h1 className="text-[32px] sm:text-[38px] lg:text-[46px] font-bold text-white leading-[1.18] tracking-tight mb-4 font-heading">
               Professional Automotive Care. <br />
               <span className="text-[#D1D5DB] font-medium">Quality You Can Trust.</span>
             </h1>
 
-            {/* Supporting Text (15-17px) */}
             <p className="text-[15px] sm:text-[16px] text-[#9CA3AF] leading-relaxed max-w-xl mb-7">
               Reliable automotive services, modern workshop equipment, and dedicated care for every vehicle.
             </p>
 
-            {/* Two Attractive Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 mb-8">
               <a
                 href="#services"
@@ -72,7 +66,6 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
               </a>
             </div>
 
-            {/* Small Trust Highlights */}
             <div className="pt-6 border-t border-[#232832] grid grid-cols-3 gap-3 text-left">
               <div>
                 <div className="text-[10px] uppercase tracking-wider text-[#8E1A27] font-semibold">Location</div>
@@ -94,10 +87,8 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
             </div>
           </div>
 
-          {/* Right Column: High-Quality Business Photograph */}
           <div className="lg:col-span-6 xl:col-span-6">
             <div className="relative rounded-md overflow-hidden bg-[#14171D] border border-[#2D333B] shadow-xl">
-              {/* Sharp, uncompromised presentation of the real entrance and facility photograph */}
               <img
                 src={entranceImage}
                 alt="ABSIM AUTOMOTIVE facility entrance and workshop in Addis Ababa, Ethiopia"
@@ -107,7 +98,6 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
                 className="w-full h-auto object-cover object-center block"
               />
 
-              {/* Clean bottom status bar */}
               <div className="p-3 bg-[#14171D] border-t border-[#232832] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 text-xs w-full box-border">
                 <div className="flex items-center gap-2 min-w-0">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />

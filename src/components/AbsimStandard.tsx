@@ -32,7 +32,6 @@ export const AbsimStandard: React.FC = () => {
   return (
     <section id="standard" className="py-16 sm:py-20 bg-[#0B0D10] border-b border-[#232832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header: 28-34px */}
         <div className="max-w-2xl mb-12">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
             <span>OUR COMMITMENT</span>
@@ -47,7 +46,6 @@ export const AbsimStandard: React.FC = () => {
           </p>
         </div>
 
-        {/* Structured 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-[#232832] border-y border-[#232832] py-8">
           {principles.map((item, idx) => (
             <div

@@ -10,7 +10,6 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-14 sm:py-20 pb-24 sm:pb-28 bg-[#0E1115] border-b border-[#232832] overflow-x-hidden w-full box-border">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full box-border">
-        {/* Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-10 w-full box-border">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#14171D] border border-[#8E1A27]/40 text-[11px] uppercase tracking-widest text-[#9CA3AF] font-semibold mb-2.5">
             <span>LOCATION & CONTACT</span>
@@ -25,9 +24,7 @@ export const ContactSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Quick Contact Bar: Phone, WhatsApp, Hours (Single-col mobile, 3-col desktop) */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 sm:mb-12 w-full box-border">
-          {/* Direct Phone */}
           <a
             href={`tel:${BRAND_CONFIG.phoneRaw}`}
             className="flex items-center gap-3 p-3.5 bg-[#14171D] border border-[#232832] hover:border-[#8E1A27]/60 rounded-md transition-colors group min-w-0 w-full box-border"
@@ -45,7 +42,6 @@ export const ContactSection: React.FC = () => {
             </div>
           </a>
 
-          {/* WhatsApp Chat */}
           <a
             href={`https://wa.me/${BRAND_CONFIG.whatsappNumber}?text=${encodeURIComponent('Hello ABSIM Automotive, I would like to inquire about your services.')}`}
             target="_blank"
@@ -65,7 +61,6 @@ export const ContactSection: React.FC = () => {
             </div>
           </a>
 
-          {/* Operating Hours */}
           <div className="flex items-center gap-3 p-3.5 bg-[#14171D] border border-[#232832] rounded-md min-w-0 w-full box-border">
             <div className="w-8 h-8 rounded-sm bg-[#0B0D10] border border-[#8E1A27]/40 flex items-center justify-center shrink-0 text-[#8E1A27]">
               <Clock className="w-4 h-4" />
@@ -81,16 +76,7 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* =========================================================================
-            CARD ONE: WORKSHOP & CAR LAUNDRY FACILITY
-            Strict Order on Mobile & All Screens:
-            1. Workshop Entrance Photograph
-            2. WORKSHOP & CAR LAUNDRY FACILITY Title Underneath
-            3. Workshop Facility Description
-            4. Corresponding Workshop Address & Location Details
-           ========================================================================= */}
         <div className="w-full bg-[#14171D] border border-[#232832] rounded-lg overflow-hidden shadow-lg box-border">
-          {/* 1. Workshop entrance photograph first */}
           <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full bg-[#0B0D10] overflow-hidden border-b border-[#232832]">
             <img
               src={entranceImage}
@@ -104,9 +90,7 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Content Container Directly Underneath Image */}
           <div className="p-4 sm:p-6 w-full box-border">
-            {/* 2. Title Underneath */}
             <div className="mb-3">
               <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-1">
                 FACILITY LOCATION
@@ -116,12 +100,10 @@ export const ContactSection: React.FC = () => {
               </h3>
             </div>
 
-            {/* 3. Short description of the facility */}
             <p className="text-sm sm:text-[15px] text-[#D1D5DB] leading-relaxed mb-4 break-words [overflow-wrap:anywhere]">
               Our active automotive care workshop and dedicated Car Laundry yard located within the secure, gated compound behind AMCE. Equipped with high-precision tyre mounting, electronic wheel balancing, Corghi 3D computerized alignment, full walk-under vehicle inspection pit, and high-pressure vehicle washing bays.
             </p>
 
-            {/* 4. Corresponding location information */}
             <div className="p-4 bg-[#0B0D10] border border-[#232832] rounded-md space-y-3 mb-4 w-full box-border">
               <div className="flex items-start gap-2.5 min-w-0">
                 <MapPin className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
@@ -151,7 +133,6 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Navigation Button */}
             <div>
               <a
                 href={BRAND_CONFIG.googleMapsUrl}
@@ -166,19 +147,9 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Clear Vertical Spacing Between the Two Independent Cards */}
         <div className="my-8 sm:my-14 border-t border-[#232832] w-full" />
 
-        {/* =========================================================================
-            CARD TWO: OFFICIAL BUSINESS LOCATION
-            Strict Order on Mobile & All Screens:
-            1. Official Business Location Photograph (Distinct, Non-Duplicate)
-            2. OFFICIAL BUSINESS LOCATION Title Underneath
-            3. Official Address and Location Description
-            4. Location / Driving Directions Functionality
-           ========================================================================= */}
         <div className="w-full bg-[#14171D] border border-[#232832] rounded-lg overflow-hidden shadow-lg box-border">
-          {/* 1. Official business location photograph first (with optional interactive map view) */}
           <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full bg-[#0B0D10] overflow-hidden border-b border-[#232832]">
             {activeTab === 'photo' ? (
               <img
@@ -198,12 +169,10 @@ export const ContactSection: React.FC = () => {
               />
             )}
 
-            {/* Location Tag */}
             <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#0B0D10]/90 backdrop-blur-sm border border-[#2D333B] px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white">
               Official Technical Facility
             </div>
 
-            {/* View Toggle: Photo / Map */}
             <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 flex items-center bg-[#0B0D10]/90 backdrop-blur-sm border border-[#2D333B] p-0.5 rounded">
               <button
                 type="button"
@@ -232,9 +201,7 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Content Container Directly Underneath Image */}
           <div className="p-4 sm:p-6 w-full box-border">
-            {/* 2. Title Underneath */}
             <div className="mb-3">
               <div className="text-[11px] uppercase tracking-wider text-[#8E1A27] font-semibold mb-1">
                 REGISTERED ADDRESS & ACCESS
@@ -244,7 +211,6 @@ export const ContactSection: React.FC = () => {
               </h3>
             </div>
 
-            {/* 3. Official address and location description below title */}
             <div className="p-4 bg-[#0B0D10] border border-[#232832] rounded-md space-y-3 mb-4 w-full box-border">
               <div className="flex items-start gap-2.5 min-w-0">
                 <MapPin className="w-4 h-4 text-[#8E1A27] shrink-0 mt-0.5" />
@@ -288,7 +254,6 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* 4. Location and navigation functionality */}
             <div>
               <a
                 href={BRAND_CONFIG.googleMapsUrl}
